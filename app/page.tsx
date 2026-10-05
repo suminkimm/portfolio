@@ -1,69 +1,111 @@
-import Image from "next/image";
+import final_parkingsign_green from "./images/final_parkingsign_green.png";
+import GradientBackground from "../components/GradientBackground";
+import TopNavigation from "../components/TopNavigation";
+import WorkCard from "../components/WorkCard";
+import { PROJECTS, TOOLS } from "../Constants";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="page-shell">
+      <GradientBackground />
+      <TopNavigation />
+      <div className="page-grid">
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="hero-copy">
+            <div className="hero-stack">
+              <h1 id="hero-title">I&apos;m Su Min,</h1>
+              <p className="hero-subtitle">a design-driven developer</p>
+              <p className="hero-note">
+                I&apos;m a product-minded frontend engineer who blends design
+                thinking with polished implementation to solve hard problems.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="work" className="work-section" aria-labelledby="work-heading">
+          <div className="section-label" id="work-heading">
+            Selected work
+          </div>
+
+          <div className="project-grid">
+            {PROJECTS.filter((project) => project.slug === "park-smart").map((project) => (
+              <WorkCard
+                key={project.name}
+                name={project.name}
+                type={project.type}
+                year={project.year}
+                accent={project.accent}
+                slug={project.slug}
+                imageSrc={final_parkingsign_green.src}
+                isFeatured
+              />
+            ))}
+          </div>
+        </section>
+
+        <section id="about" className="about-section" aria-labelledby="about-heading">
+          <div className="section-label" id="about-heading">
+            About
+          </div>
+
+          <div className="about-grid">
+            <div className="about-copy">
+              <p>
+                I design interfaces that make complexity feel effortless. My work
+                sits at the intersection of strategy, product thinking, and
+                precise front-end craft, helping teams ship experiences that are
+                still elegant under pressure.
+              </p>
+              <p>
+                I care about clarity, motion, accessibility, and the small
+                decisions that make a product feel premium—without compromising
+                speed or functionality.
+              </p>
+            </div>
+
+            <div className="about-metrics" aria-label="Career metrics">
+              <div>
+                <strong>8+</strong>
+                <span>Years building digital products</span>
+              </div>
+              <div>
+                <strong>24</strong>
+                <span>Product and design launches</span>
+              </div>
+              <div>
+                <strong>3</strong>
+                <span>Design systems scaled across teams</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="tools-section" aria-labelledby="tools-heading">
+          <div className="section-label" id="tools-heading">
+            Tools &amp; strengths
+          </div>
+
+          <ul className="tools-strip" aria-label="Tools list">
+            {TOOLS.map((tool) => (
+              <li key={tool}>{tool}</li>
+            ))}
+          </ul>
+        </section>
+
+        <footer className="site-footer" id="contact">
+          <div className="footer-links">
+            <a href="mailto:kims622@gmail.com">kims622@gmail.com</a>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://www.linkedin.com/in/su-min-kim/"
+              target="_blank"
+              rel="noreferrer"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+              LinkedIn
+            </a>
+          </div>
+        </footer>
+      </div>
+    </main>
   );
 }
