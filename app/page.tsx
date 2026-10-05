@@ -1,5 +1,4 @@
 import final_parkingsign_green from "./images/final_parkingsign_green.png";
-import GradientBackground from "../components/GradientBackground";
 import TopNavigation from "../components/TopNavigation";
 import WorkCard from "../components/WorkCard";
 import { PROJECTS, TOOLS } from "../Constants";
@@ -7,7 +6,6 @@ import { PROJECTS, TOOLS } from "../Constants";
 export default function Home() {
   return (
     <main className="page-shell">
-      <GradientBackground />
       <TopNavigation />
       <div className="page-grid">
         <section className="hero" aria-labelledby="hero-title">
@@ -52,7 +50,7 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-copy">
               <p>
-                I’m a frontend engineer at Microsoft and a master’s student in Human-Centered Design & Engineering at UW. 
+                I’m currently a frontend engineer at Microsoft and pursuing a Master’s degree in Human-Centered Design & Engineering at the University of Washington. 
                 I like building things at the intersection of code and design. I love the process of turning ideas into experiences that feel intuitive and accessible. 
                 I’m particularly interested in creative tools and the ways technology can support people in a quiet, seamless way.
               </p>

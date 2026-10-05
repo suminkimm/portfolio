@@ -10,10 +10,8 @@ export default function CustomCursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
+    const mouseX = { current: 0 };
+    const mouseY = { current: 0 };
 
     const setCursorSize = (size: number, borderWidth: number) => {
       cursor.style.width = `${size}px`;
@@ -21,34 +19,24 @@ export default function CustomCursor() {
       cursor.style.borderWidth = `${borderWidth}px`;
     };
 
-    const animate = () => {
-      currentX += (mouseX - currentX) * 0.4;
-      currentY += (mouseY - currentY) * 0.4;
-      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
-
-      const dx = mouseX - currentX;
-      const dy = mouseY - currentY;
-
-      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
-        rafRef.current = requestAnimationFrame(animate);
-      } else {
-        rafRef.current = null;
-      }
+    const updateCursor = () => {
+      cursor.style.transform = `translate3d(${mouseX.current}px, ${mouseY.current}px, 0) translate(-50%, -50%)`;
+      rafRef.current = null;
     };
 
     const handlePointerMove = (event: PointerEvent) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+      mouseX.current = event.clientX;
+      mouseY.current = event.clientY;
       cursor.style.opacity = "1";
 
       if (!rafRef.current) {
-        rafRef.current = requestAnimationFrame(animate);
+        rafRef.current = requestAnimationFrame(updateCursor);
       }
     };
 
     const handlePointerDown = (event: PointerEvent) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+      mouseX.current = event.clientX;
+      mouseY.current = event.clientY;
       cursor.style.opacity = "1";
     };
 

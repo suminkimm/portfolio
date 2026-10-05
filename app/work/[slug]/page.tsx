@@ -7,14 +7,12 @@ import final_parkingsigns from "../../../app/images/final_parkingsigns.png";
 import storyboardsketches from "../../../app/images/storyboardsketches.png";
 import userpersona1 from "../../../app/images/userpersona1.png";
 import userpersona2 from "../../../app/images/userpersona2.png";
-import GradientBackground from "../../../components/GradientBackground";
 import ProjectToc from "../../../components/ProjectToc";
 import TopNavigation from "../../../components/TopNavigation";
 
 export default function ParkSmartPage() {
   return (
     <main className="project-detail-page">
-      <GradientBackground />
       <TopNavigation />
       <div className="project-detail-layout">
         <aside className="project-detail-sidebar">

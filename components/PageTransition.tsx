@@ -9,35 +9,40 @@ export default function PageTransition({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const previousPath = useRef(pathname);
+  const previousPath = useRef<string | null>(null);
   const [phase, setPhase] = useState<"idle" | "exiting" | "entering">("idle");
 
   useEffect(() => {
-    if (previousPath.current === pathname) {
+    const isFirstRender = previousPath.current === null;
+    const previousPage = previousPath.current;
+
+    previousPath.current = pathname;
+
+    if (isFirstRender) {
+      setPhase("idle");
       return;
     }
 
-    previousPath.current = pathname;
-    setPhase("exiting");
+    const wasHome = previousPage === "/";
 
-    const exitTimer = window.setTimeout(() => {
-      setPhase("entering");
-    }, 220);
+    if (wasHome) {
+      setPhase("exiting");
+
+      const settleTimer = window.setTimeout(() => {
+        setPhase("idle");
+      }, 260);
+
+      return () => window.clearTimeout(settleTimer);
+    }
+
+    setPhase("entering");
 
     const settleTimer = window.setTimeout(() => {
       setPhase("idle");
-    }, 980);
+    }, 220);
 
-    return () => {
-      window.clearTimeout(exitTimer);
-      window.clearTimeout(settleTimer);
-    };
+    return () => window.clearTimeout(settleTimer);
   }, [pathname]);
 
-  return (
-    <div className={`page-transition-shell ${phase}`}>
-      <div className="page-transition-orange" aria-hidden="true" />
-      <div className="page-transition-content">{children}</div>
-    </div>
-  );
+  return <div className={`page-transition-shell ${phase}`}>{children}</div>;
 }

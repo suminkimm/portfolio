@@ -379,8 +379,8 @@ export default function GradientBackground() {
     <div className={`webgl-background ${isReady ? "ready" : ""}`} aria-hidden="true">
       <Canvas
         camera={{ position: [0, 0, 1], fov: 45 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true, premultipliedAlpha: false }}
+        dpr={1}
+        gl={{ antialias: false, alpha: true, premultipliedAlpha: false, powerPreference: "high-performance" }}
       >
         <GradientSurface />
       </Canvas>
