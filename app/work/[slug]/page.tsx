@@ -3,6 +3,8 @@ import Link from "next/link";
 import badSigns from "../../../app/images/badSigns.png";
 import designRequirements from "../../../app/images/designRequirements.png";
 import final_mobile1 from "../../../app/images/final_mobile1.png";
+import final_mobile2 from "../../../app/images/final_mobile2.png";
+import final_mobile3 from "../../../app/images/final_mobile3.png";
 import final_parkingsigns from "../../../app/images/final_parkingsigns.png";
 import storyboardsketches from "../../../app/images/storyboardsketches.png";
 import userpersona1 from "../../../app/images/userpersona1.png";
@@ -38,7 +40,7 @@ export default function ParkSmartPage() {
         </aside>
 
         <article className="project-detail-content" aria-labelledby="project-title">
-          <div className="project-kicker">UX case study • 2025</div>
+          <div className="project-kicker">University of Washington • SEP 2025</div>
           <h1 id="project-title">Park Smart</h1>
           <p className="project-summary">
             Simplifying complex street parking signage for downtown Seattle drivers.
@@ -56,11 +58,12 @@ export default function ParkSmartPage() {
 
           <section id="overview" className="detail-chapter">
             <div className="chapter-label">Overview</div>
-            <h2>Making the valid parking status feel obvious at a glance</h2>
+            <h2>What if we could make street parking an intuitive experience?</h2>
             <p>
-              Park Smart was built to reduce the cognitive load of Seattle’s street parking experience by clarifying what the rule actually is in the moment.
+              As part of the 8 week course in User Centered Design at the University of Washington, our team sought to create a solution that would simplify the street parking experience in Seattle. 
             </p>
             <p>
+              Park Smart was built to reduce the cognitive load of Seattle’s street parking experience by clarifying what the rule actually is in the moment.
               The project focused on making parking decisions feel confident, faster, and less stressful for drivers navigating dense downtown conditions.
             </p>
           </section>
@@ -76,6 +79,7 @@ export default function ParkSmartPage() {
                 <p>
                   The challenge was to make Seattle’s confusing street parking signs easier to interpret, reducing stress and preventing parking mistakes in dense downtown areas.
                 </p>
+                <b>How might we simplify Seattle drivers’ experience of understanding street parking signs in busy Seattle downtown areas to reduce confusion and improve compliance?</b>
               </div>
               <div className="chapter-image-wrap">
                 <img
@@ -110,6 +114,9 @@ export default function ParkSmartPage() {
                 <strong>Lack of clear curb markings and boundaries adds confusion</strong>, making drivers unsure where parking begins or ends.
               </li>
             </ul>
+            <div className="chapter-subhead-wrap">
+              <h3 className="chapter-subhead">USER PERSONAS</h3>
+            </div>
             <div className="chapter-block-list chapter-block-list-personas">
               <img
                 src={userpersona1.src}
@@ -157,32 +164,17 @@ export default function ParkSmartPage() {
 
           <section id="solution" className="detail-chapter">
             <div className="chapter-label">Solution</div>
-            <h2>Rapid iteration toward a calmer parking experience</h2>
+            <h2>Clearer signage accompanied by a mobile app </h2>
             <p>
               Our final prototype explored a clearer interaction model: show the active rule status at a glance, surface changes over time, and guide the driver to the correct curb decisions with minimal reading.
             </p>
-            <p>
-              The final concept simplified the experience into visual, time-aware clarity rather than dense text-heavy signage.
-            </p>
-
             <div className="chapter-subhead-wrap">
-              <h3 className="chapter-subhead">Mobile Map App</h3>
+              <h3 className="chapter-subhead">Physical Signage</h3>
             </div>
-
-            <div className="chapter-image-wrap chapter-image-wrap-large">
-              <img
-                src={final_mobile1.src}
-                alt="Mobile map app parking assist feature"
-                className="chapter-image chapter-image-large"
-              />
-            </div>
-            <ul className="chapter-bullets">
-              <li>After searching for a destination, users can choose to enable Parking Assist.</li>
-              <li>
-                Users can easily toggle the parking assistant and filter for free, paid, or restricted parking.
-              </li>
-            </ul>
-
+            <p>
+              The digital parking sign dynamically displays the icon that represents the current parking regulation in effect using a digital screen.
+              A QR code on the sign allows drivers to access a mobile app that provides additional information about the parking rules and restrictions.
+            </p>
             <div className="chapter-image-wrap chapter-image-wrap-large">
               <img
                 src={final_parkingsigns.src}
@@ -190,20 +182,62 @@ export default function ParkSmartPage() {
                 className="chapter-image chapter-image-large"
               />
             </div>
+            <div className="chapter-subhead-wrap">
+              <h3 className="chapter-subhead">Mobile Map App</h3>
+            </div>
             <p>
-              The digital parking sign dynamically displays the icon that represents the current parking regulation in effect.
+              After searching for a destination, users can choose to enable Parking Assist.
+              Users can easily toggle the parking assistant and filter for free, paid, or restricted parking.
             </p>
+            <div className="chapter-image-wrap chapter-image-wrap-large">
+              <img
+                src={final_mobile1.src}
+                alt="Mobile map app parking assist feature"
+                className="chapter-image chapter-image-large"
+              />
+            </div>
+            <p>
+            As users near their destination, Parking Assistant activates automatically if enabled.
+            The map shows color-coded streets: green (free), blue (paid), yellow (restricted), red (no parking).
+            On-map overlays display details like pricing, time limits, and active hours.
+            </p>
+            <div className="chapter-image-wrap chapter-image-wrap-large">
+              <img
+                src={final_mobile2.src}
+                alt="Mobile map app parking assist feature"
+                className="chapter-image chapter-image-large"
+              />
+            </div>
+            <p>
+            The app displays whether parking is allowed, whether it’s free or paid, and details like pricing, time limits, and active hours, all updated in real time.
+            Users can also start a parking timer from this page to track their parking duration.
+            </p>
+            <div className="chapter-image-wrap chapter-image-wrap-large">
+              <img
+                src={final_mobile3.src}
+                alt="Mobile map app parking assist feature"
+                className="chapter-image chapter-image-large"
+              />
+            </div>
           </section>
 
-          <section id="learnings" className="detail-chapter">
+          <section id="learnings" className="detail-chapter reflection-section">
             <div className="chapter-label">Learnings</div>
-            <h2>Small design changes can reshape confidence at the curb</h2>
-            <p>
-              The strongest lesson was that drivers do not need more instruction; they need less ambiguity.
-            </p>
-            <p>
-              By reducing the number of decisions a driver has to make at a glance, the system created a calmer, safer, and more compliant parking experience.
-            </p>
+            <div className="reflection-grid">
+              <div className="reflection-item">
+                <h3>Trust is Critical</h3>
+                <p>
+                Drivers need to trust that the information they are receiving is accurate and up-to-date. If the system is not reliable or "official", drivers may ignore it or become frustrated, which can lead to non-compliance.
+                </p>
+              </div>
+
+              <div className="reflection-item">
+                <h3>Systems are Intertwined</h3>
+                <p>
+                A successful solution must fit into the broader parking experience, including availability and payment, while also accounting for city policies and incentives. These constraints highlighted the importance of designing not only for user needs, but also for the feasibility of real-world adoption.
+                </p>
+              </div>
+            </div>
           </section>
         </article>
       </div>
