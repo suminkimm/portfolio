@@ -121,6 +121,7 @@ article:focus-visible {
   z-index: 9999;
   opacity: 0;
   transform: translate(-50%, -50%);
+  will-change: transform;
   transition: width 0.2s ease, height 0.2s ease, border-width 0.2s ease, opacity 0.2s ease;
 }
 

@@ -52,31 +52,14 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-copy">
               <p>
-                I design interfaces that make complexity feel effortless. My work
-                sits at the intersection of strategy, product thinking, and
-                precise front-end craft, helping teams ship experiences that are
-                still elegant under pressure.
+                I’m a frontend engineer at Microsoft and a master’s student in Human-Centered Design & Engineering at UW. 
+                I like building things at the intersection of code and design. I love the process of turning ideas into experiences that feel intuitive and accessible. 
+                I’m particularly interested in creative tools and the ways technology can support people in a quiet, seamless way.
               </p>
               <p>
-                I care about clarity, motion, accessibility, and the small
-                decisions that make a product feel premium—without compromising
-                speed or functionality.
+                Outside of work and school, you’ll usually find me making something, 
+                whether that’s a digital illustration, a knitted sweater, or clay trinkets.
               </p>
-            </div>
-
-            <div className="about-metrics" aria-label="Career metrics">
-              <div>
-                <strong>8+</strong>
-                <span>Years building digital products</span>
-              </div>
-              <div>
-                <strong>24</strong>
-                <span>Product and design launches</span>
-              </div>
-              <div>
-                <strong>3</strong>
-                <span>Design systems scaled across teams</span>
-              </div>
             </div>
           </div>
         </section>

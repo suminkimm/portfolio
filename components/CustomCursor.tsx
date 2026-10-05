@@ -22,16 +22,28 @@ export default function CustomCursor() {
     };
 
     const animate = () => {
-      currentX += (mouseX - currentX) * 0.18;
-      currentY += (mouseY - currentY) * 0.18;
-      cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-      rafRef.current = requestAnimationFrame(animate);
+      currentX += (mouseX - currentX) * 0.4;
+      currentY += (mouseY - currentY) * 0.4;
+      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+
+      const dx = mouseX - currentX;
+      const dy = mouseY - currentY;
+
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
+        rafRef.current = null;
+      }
     };
 
     const handlePointerMove = (event: PointerEvent) => {
       mouseX = event.clientX;
       mouseY = event.clientY;
       cursor.style.opacity = "1";
+
+      if (!rafRef.current) {
+        rafRef.current = requestAnimationFrame(animate);
+      }
     };
 
     const handlePointerDown = (event: PointerEvent) => {
@@ -45,7 +57,7 @@ export default function CustomCursor() {
     };
 
     const onHoverStart = () => {
-      setCursorSize(56, 3);
+      setCursorSize(44, 2);
     };
 
     const onHoverEnd = () => {
@@ -57,7 +69,7 @@ export default function CustomCursor() {
     document.addEventListener("pointerleave", handlePointerLeave);
 
     const interactiveTargets = document.querySelectorAll(
-      "a, button, summary, article, details, .project-card, .demo-item, .main-nav a, .chapter-nav a, .back-link"
+      "a, button, summary, .project-card, .demo-item, .main-nav a, .chapter-nav a, .back-link"
     );
 
     interactiveTargets.forEach((element) => {
@@ -67,7 +79,6 @@ export default function CustomCursor() {
 
     setCursorSize(40, 2);
     cursor.style.opacity = "0";
-    rafRef.current = requestAnimationFrame(animate);
 
     return () => {
       document.removeEventListener("pointermove", handlePointerMove);
