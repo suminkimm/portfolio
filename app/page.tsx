@@ -5,7 +5,7 @@ import { PROJECTS, TOOLS } from "../Constants";
 
 export default function Home() {
   return (
-    <main className="page-shell">
+    <main className="page-shell home-page">
       <TopNavigation />
       <div className="page-grid">
         <section className="hero" aria-labelledby="hero-title">
@@ -50,8 +50,8 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-copy">
               <p>
-                I’m currently a frontend engineer at Microsoft and pursuing a Master’s degree in Human-Centered Design & Engineering at the University of Washington. 
-                I like building things at the intersection of code and design. I love the process of turning ideas into experiences that feel intuitive and accessible. 
+                I’m currently a frontend engineer at Microsoft pursuing a Master’s degree in Human-Centered Design & Engineering at the University of Washington. 
+                I love building things at the intersection of code and design.
                 I’m particularly interested in creative tools and the ways technology can support people in a quiet, seamless way.
               </p>
               <p>

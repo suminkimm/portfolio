@@ -227,14 +227,14 @@ export default function ParkSmartPage() {
               <div className="reflection-item">
                 <h3>Trust is Critical</h3>
                 <p>
-                Drivers need to trust that the information they are receiving is accurate and up-to-date. If the system is not reliable or "official", drivers may ignore it or become frustrated, which can lead to non-compliance.
+                  Drivers need to trust that the information they are receiving is accurate and up-to-date. If the system is not reliable or "official", drivers may ignore it or become frustrated, which can lead to non-compliance.
                 </p>
               </div>
 
               <div className="reflection-item">
                 <h3>Systems are Intertwined</h3>
                 <p>
-                A successful solution must fit into the broader parking experience, including availability and payment, while also accounting for city policies and incentives. These constraints highlighted the importance of designing not only for user needs, but also for the feasibility of real-world adoption.
+                  A successful solution must fit into the broader parking experience, including availability and payment, while also accounting for city policies and incentives. These constraints highlighted the importance of designing not only for user needs, but also for the feasibility of real-world adoption.
                 </p>
               </div>
             </div>

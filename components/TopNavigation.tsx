@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 
 export default function TopNavigation() {
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const isWorkActive = pathname === "/" || pathname.startsWith("/work");
 
   return (
-    <header className="topbar" aria-label="Main navigation">
+    <header className={`topbar ${isHomePage ? "home-page" : ""}`} aria-label="Main navigation">
       <div className="brand" aria-label="Su Min Kim">
         <Link href="/">SU MIN KIM</Link>
       </div>
