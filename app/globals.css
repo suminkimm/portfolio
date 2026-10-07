@@ -8,6 +8,27 @@
   --line: rgba(17, 17, 17, 0.18);
   --panel: rgba(255, 255, 255, 0.12);
   --shadow: rgba(56, 65, 74, 0.18);
+
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --type-body: 1rem;
+  --type-caption: 0.72rem;
+  --type-label: 0.8rem;
+  --type-sm: 0.875rem;
+  --type-lg: 1.25rem;
+  --type-xl: 1.5rem;
+  --type-2xl: 2rem;
+  --type-3xl: 2.6rem;
+  --type-4xl: 4rem;
+  --type-5xl: 5rem;
+  --type-display: 6rem;
+
+  --tracking-tight: -0.04em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.12em;
+
+  /* Shared horizontal alignment for the entire site */
+  --page-padding: clamp(18px, 2vw, 32px);
 }
 
 * {
@@ -24,7 +45,9 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  font-family: sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--type-body);
+  letter-spacing: var(--tracking-normal);
   cursor: none;
   color: var(--ink);
   background: transparent;
@@ -72,6 +95,10 @@ article:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
 }
+
+/* --------------------------------
+Background
+-------------------------------- */
 
 .persistent-background {
   position: fixed;
@@ -124,6 +151,10 @@ article:focus-visible {
   opacity: 1;
 }
 
+/* --------------------------------
+Custom cursor
+-------------------------------- */
+
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -138,7 +169,11 @@ article:focus-visible {
   opacity: 0;
   transform: translate(-50%, -50%);
   will-change: transform;
-  transition: width 0.15s ease, height 0.15s ease, border-width 0.15s ease, opacity 0.15s ease;
+  transition:
+    width 0.15s ease,
+    height 0.15s ease,
+    border-width 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .custom-cursor::after {
@@ -153,6 +188,10 @@ article:focus-visible {
   transform: translate(-50%, -50%);
 }
 
+/* --------------------------------
+Page transitions
+-------------------------------- */
+
 .page-transition-shell {
   position: relative;
   min-height: 100vh;
@@ -160,21 +199,27 @@ article:focus-visible {
   background: transparent;
 }
 
-.page-transition-shell > * {
+.page-transition-shell>* {
   opacity: 1;
   transform: none;
-  transition: opacity 220ms ease, transform 220ms ease;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
 }
 
-.page-transition-shell.exiting > * {
+.page-transition-shell.exiting>* {
   opacity: 0.96;
   transform: translateY(4px);
 }
 
-.page-transition-shell.entering > * {
+.page-transition-shell.entering>* {
   opacity: 1;
   transform: none;
 }
+
+/* --------------------------------
+Page shell
+-------------------------------- */
 
 .page-shell,
 .project-detail-page {
@@ -194,14 +239,23 @@ article:focus-visible {
   padding: 0 0 28px;
 }
 
+/*
+The page content uses the exact same horizontal
+padding as the navigation.
+*/
 .page-grid {
   position: relative;
-  max-width: 1680px;
-  margin: 0 auto;
-  padding: 0 clamp(10px, 1.2vw, 18px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--page-padding);
   background: transparent;
   border: 0;
 }
+
+/* --------------------------------
+Top navigation
+-------------------------------- */
 
 .topbar {
   position: relative;
@@ -212,7 +266,7 @@ article:focus-visible {
   min-height: 56px;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 12px clamp(18px, 2vw, 32px) 16px;
+  padding: 12px var(--page-padding) 16px;
   background: transparent;
   border-bottom: none;
 }
@@ -242,8 +296,8 @@ article:focus-visible {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 2vw, 2rem);
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
+  font-size: var(--type-caption);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
 }
 
@@ -261,59 +315,97 @@ article:focus-visible {
   display: none;
 }
 
+/* --------------------------------
+Hero
+-------------------------------- */
+
 .hero {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 62vh;
-  padding-top: 110px;
+  flex-direction: column;
+  min-height: 76vh;
+  padding-top: 42px;
+  padding-bottom: 0;
 }
 
-.hero-copy {
+/*
+No additional horizontal padding here.
+.page-grid already establishes the shared edge.
+*/
+.hero-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 1.1fr) minmax(260px, 1.3fr);
+  gap: clamp(18px, 2vw, 34px);
+  width: 100%;
+  align-items: start;
+}
+
+.hero-brand,
+.hero-aside {
+  position: relative;
+  z-index: 1;
+  padding-top: 0;
+}
+
+.hero-brand h1 {
+  margin: 0;
+  padding-top: 0.1em;
+  font-size: clamp(3.2rem, 3.8vw, 6rem);
+  line-height: 0.74;
+  letter-spacing: -0.09em;
+  font-weight: 700;
+  text-transform: none;
+  text-align: left;
+  color: #ffffff;
+}
+
+.hero-aside {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
 
-.hero-stack {
-  display: grid;
-  gap: 0.4rem;
-  justify-items: center;
-  text-align: center;
-}
-
-.hero h1 {
+.hero-aside p {
+  width: min(100%, 420px);
   margin: 0;
-  font-size: clamp(7rem, 11vw, 24rem);
-  line-height: 0.78;
-  letter-spacing: -0.08em;
-  font-weight: 900;
-  text-transform: none;
-  text-align: center;
-  word-break: keep-all;
-  color: #ffffff;
+  font-size: clamp(1.1rem, 1.4vw, 2.3rem);
+  line-height: 1.24;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: right;
 }
 
-.hero-subtitle {
+.hero-wordmark-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  min-height: 0;
+  padding-bottom: 0.22em;
+}
+
+.hero-wordmark {
+  display: block;
   margin: 0;
-  font-size: clamp(3.2rem, 5vw, 6.2rem);
-  line-height: 0.95;
+  margin-top: auto;
+  font-size: clamp(6rem, 10vw, 16rem);
+  line-height: 0.7;
   letter-spacing: -0.06em;
-  font-weight: 700;
-  text-align: center;
-  color: #ffffff;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.96);
+  text-align: left;
+  transform: scaleY(1.04);
+  white-space: normal;
 }
 
-.hero-note {
-  margin: 2.4rem 0 0;
-  max-width: 760px;
-  font-size: clamp(1.6rem, 2.2vw, 3rem);
-  line-height: 1.26;
-  letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.82);
-  text-align: center;
-}
+/* --------------------------------
+Statement
+-------------------------------- */
 
 .statement {
   position: relative;
@@ -337,21 +429,29 @@ article:focus-visible {
   display: block;
 }
 
+/* --------------------------------
+Sections
+-------------------------------- */
+
 .work-section,
 .about-section,
 .demo-section,
 .tools-section {
-  padding-top: 42px;
+  padding-top: 100px;
 }
 
 .section-label {
   margin-bottom: 18px;
-  font-size: 0.78rem;
+  font-size: var(--type-caption);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
 }
+
+/* --------------------------------
+Work
+-------------------------------- */
 
 .project-grid {
   display: grid;
@@ -385,7 +485,9 @@ article:focus-visible {
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 8px 24px transparent;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .project-card-featured {
@@ -406,7 +508,9 @@ article:focus-visible {
   align-items: flex-start;
   justify-content: space-between;
   padding: 16px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.08));
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.32),
+      rgba(255, 255, 255, 0.08));
 }
 
 .project-card-featured .project-visual {
@@ -432,22 +536,6 @@ article:focus-visible {
 
 .project-card-link:nth-child(3n + 1) {
   grid-column: span 4;
-}
-
-.project-pink .project-visual {
-  background: linear-gradient(135deg, rgba(253, 190, 206, 0.95), rgba(249, 209, 223, 0.72));
-}
-
-.project-blue .project-visual {
-  background: linear-gradient(135deg, rgba(185, 198, 255, 0.95), rgba(224, 232, 255, 0.7));
-}
-
-.project-gold .project-visual {
-  background: linear-gradient(135deg, rgba(236, 216, 167, 0.95), rgba(241, 233, 198, 0.7));
-}
-
-.project-mint .project-visual {
-  background: linear-gradient(135deg, rgba(190, 231, 214, 0.95), rgba(232, 246, 239, 0.7));
 }
 
 .visual-badge {
@@ -480,9 +568,9 @@ article:focus-visible {
   min-width: 0;
   overflow-wrap: anywhere;
   word-break: break-word;
-  font-size: clamp(2rem, 2.4vw, 3.4rem);
+  font-size: var(--type-3xl);
   line-height: 0.96;
-  letter-spacing: -0.08em;
+  letter-spacing: var(--tracking-tight);
   color: #ffffff;
 }
 
@@ -491,8 +579,8 @@ article:focus-visible {
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-size: var(--type-caption);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.76);
 }
@@ -501,9 +589,14 @@ article:focus-visible {
   justify-self: start;
 }
 
+/* --------------------------------
+About
+-------------------------------- */
+
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.7fr);
+  grid-template-columns:
+    minmax(0, 1.5fr) minmax(260px, 0.7fr);
   gap: 32px;
   align-items: start;
 }
@@ -546,6 +639,10 @@ article:focus-visible {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* --------------------------------
+Tools
+-------------------------------- */
+
 .tools-strip {
   display: flex;
   flex-wrap: wrap;
@@ -566,16 +663,21 @@ article:focus-visible {
   color: #ffffff;
 }
 
+/* --------------------------------
+Project detail page
+-------------------------------- */
+
 .project-detail-page {
   min-height: 100vh;
-  padding: 0 clamp(16px, 2vw, 32px) 54px;
+  padding: 0 var(--page-padding) 54px;
 }
 
 .project-detail-layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(220px, 260px) minmax(0, 760px);
+  grid-template-columns:
+    minmax(220px, 260px) minmax(0, 760px);
   gap: clamp(28px, 5vw, 64px);
   max-width: 1200px;
   margin: 42px auto 0;
@@ -606,8 +708,8 @@ article:focus-visible {
 .sidebar-label,
 .chapter-label,
 .project-kicker {
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-size: var(--type-caption);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -702,9 +804,9 @@ article:focus-visible {
 
 .chapter-subhead {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: var(--type-label);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -754,14 +856,16 @@ article:focus-visible {
 
 .chapter-media-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr);
+  grid-template-columns:
+    minmax(0, 1.4fr) minmax(220px, 0.8fr);
   align-items: center;
   gap: 24px;
   width: 100%;
 }
 
 .chapter-media-row-problem {
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  grid-template-columns:
+    minmax(0, 1.15fr) minmax(260px, 0.85fr);
   align-items: center;
 }
 
@@ -834,6 +938,10 @@ article:focus-visible {
   max-width: 100%;
 }
 
+/* --------------------------------
+Footer
+-------------------------------- */
+
 .site-footer {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -842,6 +950,16 @@ article:focus-visible {
   padding: 34px 0 8px;
   margin-top: 30px;
   border-top: 1px solid var(--line);
+}
+
+.footer-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: var(--type-caption);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .footer-meta {
@@ -868,16 +986,21 @@ article:focus-visible {
   display: flex;
   align-items: center;
   gap: 18px;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: var(--type-caption);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .home-page .site-footer,
 .home-page .site-footer .footer-links,
-.home-page .site-footer .footer-links a {
+.home-page .site-footer .footer-links a,
+.home-page .site-footer .footer-meta-tag {
   color: #ffffff;
+}
+
+.home-page .site-footer {
+  border-top-color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-links a {
@@ -891,14 +1014,22 @@ article:focus-visible {
   text-underline-offset: 4px;
 }
 
+/* --------------------------------
+Tablet
+-------------------------------- */
+
 @media (max-width: 980px) {
-  .hero {
+  .hero-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero-note {
-    max-width: 540px;
+  .hero-aside {
+    justify-content: flex-start;
+  }
+
+  .hero-aside p {
     margin-left: 0;
+    text-align: left;
   }
 
   .project-grid {
@@ -935,6 +1066,10 @@ article:focus-visible {
   }
 }
 
+/* --------------------------------
+Touch devices
+-------------------------------- */
+
 @media (pointer: coarse) {
   body {
     cursor: auto;
@@ -945,27 +1080,17 @@ article:focus-visible {
   }
 }
 
+/* --------------------------------
+Mobile
+-------------------------------- */
+
 @media (max-width: 640px) {
+  :root {
+    --page-padding: 16px;
+  }
+
   .page-shell {
-    padding: 12px 12px 18px;
-  }
-
-  .page-grid,
-  .project-detail-layout {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .topbar,
-  .hero,
-  .statement,
-  .work-section,
-  .about-section,
-  .demo-section,
-  .tools-section,
-  .site-footer {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 12px 0 18px;
   }
 
   .topbar {
@@ -978,8 +1103,33 @@ article:focus-visible {
     letter-spacing: 0.1em;
   }
 
+  .hero {
+    padding-top: 32px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-aside {
+    justify-content: flex-start;
+  }
+
+  .hero-aside p {
+    width: 100%;
+    max-width: 420px;
+    text-align: left;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-card-link,
+  .project-card-link:nth-child(3n + 1),
+  .project-card-link:nth-child(3n + 2),
+  .project-card-link:nth-child(3n + 3) {
+    grid-column: span 1;
   }
 
   .site-footer {
@@ -990,6 +1140,10 @@ article:focus-visible {
     justify-content: space-between;
   }
 }
+
+/* --------------------------------
+Reduced motion
+-------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
   html {

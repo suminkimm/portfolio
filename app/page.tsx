@@ -9,15 +9,26 @@ export default function Home() {
       <TopNavigation />
       <div className="page-grid">
         <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <div className="hero-stack">
-              <h1 id="hero-title">I&apos;m Su Min,</h1>
-              <p className="hero-subtitle">a design-driven developer</p>
-              <p className="hero-note">
-                I&apos;m a product-minded frontend engineer who blends design
-                thinking with polished implementation to solve hard problems.
+          <div className="hero-grid">
+            <div className="hero-brand">
+              <h1 id="hero-title">
+                Designer &amp;
+                <br />
+                Engineer
+              </h1>
+            </div>
+
+            <div className="hero-aside">
+              <p>
+                I'm Su Min, a frontend/UI engineer blending design thinking with polished craft. 
+                I love building things at the intersection of code and design.
               </p>
             </div>
+          </div>
+
+          <div className="hero-wordmark-wrap" aria-label="hello wordmark">
+            <div className="hero-wordmark">I BRING TASTE</div>
+            <div className="hero-wordmark">TO TECHNOLOGY</div>
           </div>
         </section>
 
@@ -85,6 +96,7 @@ export default function Home() {
               LinkedIn
             </a>
           </div>
+          <div className="footer-meta-tag">Coded in React</div>
         </footer>
       </div>
     </main>
