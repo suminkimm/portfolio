@@ -52,8 +52,10 @@ export default function ProjectToc({ chapters }: { chapters: Chapter[] }) {
         <a
           key={chapter.id}
           href={`#${chapter.id}`}
-          className={`text-[0.8rem] leading-[1.5] text-black/70 no-underline hover:text-[var(--ink)] focus-visible:text-[var(--ink)] ${
-            activeChapterId === chapter.id ? "font-bold text-[var(--ink)]" : ""
+          className={`text-[0.8rem] leading-[1.5] text-black opacity-70 no-underline transition-all duration-[180ms] hover:font-bold hover:opacity-100 focus-visible:font-bold focus-visible:opacity-100 ${
+            activeChapterId === chapter.id
+              ? "font-bold text-[var(--ink)] opacity-100"
+              : ""
           }`}
           onClick={() => setActiveChapterId(chapter.id)}
         >

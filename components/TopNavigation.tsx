@@ -10,7 +10,7 @@ export default function TopNavigation() {
 
   return (
     <header
-      className={`relative z-20 grid min-h-14 w-screen -ml-[calc(50%-50vw)] grid-cols-[1fr_auto] items-center bg-transparent px-4 pt-3 pb-4 text-[var(--ink)] sm:px-[2vw] lg:px-8 max-[640px]:grid-cols-1 max-[640px]:gap-2.5 ${
+      className={`relative z-20 grid min-h-14 w-full grid-cols-[1fr_auto] items-center bg-transparent px-4 pt-3 pb-4 text-[var(--ink)] sm:px-[2vw] lg:px-8 max-[640px]:grid-cols-1 max-[640px]:gap-2.5 ${
         isHomePage ? "text-white" : ""
       }`}
       aria-label="Main navigation"
@@ -19,7 +19,10 @@ export default function TopNavigation() {
         className="text-[clamp(1.1rem,1.5vw,2rem)] font-bold uppercase tracking-[-0.08em]"
         aria-label="Su Min Kim"
       >
-        <Link href="/" className="no-underline">
+        <Link
+          href="/"
+          className="no-underline transition-all duration-[180ms] hover:font-bold hover:opacity-100 focus-visible:font-bold focus-visible:opacity-100"
+        >
           SU MIN KIM
         </Link>
       </div>
@@ -30,7 +33,7 @@ export default function TopNavigation() {
       >
         <Link
           href="/#work"
-          className={`relative no-underline opacity-[0.72] ${
+          className={`relative no-underline opacity-[0.72] transition-all duration-[180ms] hover:font-bold hover:opacity-100 focus-visible:font-bold focus-visible:opacity-100 ${
             isWorkActive ? "font-bold opacity-100" : ""
           }`}
         >
@@ -38,7 +41,7 @@ export default function TopNavigation() {
         </Link>
         <Link
           href="/#about"
-          className={`relative no-underline opacity-[0.72] ${
+          className={`relative no-underline opacity-[0.72] transition-all duration-[180ms] hover:font-bold hover:opacity-100 focus-visible:font-bold focus-visible:opacity-100 ${
             pathname === "/#about" ? "font-bold opacity-100" : ""
           }`}
         >

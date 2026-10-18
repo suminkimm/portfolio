@@ -27,7 +27,10 @@ export default function ParkSmartPage() {
       <div className="project-detail-layout">
         <aside className="project-detail-sidebar">
           <div className="sidebar-inner">
-            <Link href="/#work" className="back-link">
+            <Link
+              href="/#work"
+              className="back-link transition-opacity duration-[180ms] hover:opacity-60 focus-visible:opacity-60"
+            >
               ← Back
             </Link>
 
