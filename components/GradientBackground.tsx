@@ -172,13 +172,21 @@ function GradientSurface() {
       uColor1Weight: { value: 0.5 },
       uColor2Weight: { value: 1.8 }
     }),
-    []
+    [size.height, size.width]
   );
 
   useEffect(() => {
-    touchTextureRef.current = new TouchTexture();
-    uniforms.uTouchTexture.value = touchTextureRef.current.texture;
-  }, [uniforms]);
+    const nextTouchTexture = new TouchTexture();
+    touchTextureRef.current = nextTouchTexture;
+    if (materialRef.current) {
+      materialRef.current.uniforms.uTouchTexture.value = nextTouchTexture.texture;
+    }
+
+    return () => {
+      nextTouchTexture.texture.dispose();
+      touchTextureRef.current = null;
+    };
+  }, []);
 
   useFrame((state, delta) => {
     const material = materialRef.current;

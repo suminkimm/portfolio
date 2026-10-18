@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"threejsresources": {
+			"url": "https://threejsresources.com/api/mcp",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}

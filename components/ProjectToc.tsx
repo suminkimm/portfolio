@@ -13,7 +13,7 @@ export default function ProjectToc({ chapters }: { chapters: Chapter[] }) {
   useEffect(() => {
     const updateActiveSection = () => {
       const hashId = window.location.hash.replace("#", "");
-      if (hashId) {
+      if (hashId && chapters.some((chapter) => chapter.id === hashId)) {
         setActiveChapterId(hashId);
         return;
       }
@@ -44,12 +44,17 @@ export default function ProjectToc({ chapters }: { chapters: Chapter[] }) {
   }, [chapters]);
 
   return (
-    <nav className="chapter-nav" aria-label="Table of contents">
+    <nav
+      className="grid gap-2.5 border-t border-[var(--line)] pt-3"
+      aria-label="Table of contents"
+    >
       {chapters.map((chapter) => (
         <a
           key={chapter.id}
           href={`#${chapter.id}`}
-          className={activeChapterId === chapter.id ? "is-active" : ""}
+          className={`text-[0.8rem] leading-[1.5] text-black/70 no-underline hover:text-[var(--ink)] focus-visible:text-[var(--ink)] ${
+            activeChapterId === chapter.id ? "font-bold text-[var(--ink)]" : ""
+          }`}
           onClick={() => setActiveChapterId(chapter.id)}
         >
           {chapter.label}

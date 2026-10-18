@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import badSigns from "../../../app/images/badSigns.png";
 import designRequirements from "../../../app/images/designRequirements.png";
@@ -11,6 +12,13 @@ import userpersona1 from "../../../app/images/userpersona1.png";
 import userpersona2 from "../../../app/images/userpersona2.png";
 import ProjectToc from "../../../components/ProjectToc";
 import TopNavigation from "../../../components/TopNavigation";
+import { PROJECTS } from "../../../Constants";
+
+export function generateStaticParams() {
+  return PROJECTS.map(({ slug }) => ({ slug }));
+}
+
+export const dynamicParams = false;
 
 export default function ParkSmartPage() {
   return (
@@ -82,10 +90,11 @@ export default function ParkSmartPage() {
                 <b>How might we simplify Seattle drivers’ experience of understanding street parking signs in busy Seattle downtown areas to reduce confusion and improve compliance?</b>
               </div>
               <div className="chapter-image-wrap">
-                <img
-                  src={badSigns.src}
+                <Image
+                  src={badSigns}
                   alt="Examples of confusing parking signs"
                   className="chapter-image chapter-image-block"
+                  sizes="(max-width: 760px) 100vw, 60vw"
                 />
               </div>
             </div>
@@ -118,16 +127,18 @@ export default function ParkSmartPage() {
               <h3 className="chapter-subhead">USER PERSONAS</h3>
             </div>
             <div className="chapter-block-list chapter-block-list-personas">
-              <img
-                src={userpersona1.src}
+              <Image
+                src={userpersona1}
                 alt="User persona 1"
                 className="chapter-image chapter-image-block"
+                sizes="(max-width: 760px) 100vw, 60vw"
               />
               <div className="chapter-persona-summary">
-                <img
-                  src={userpersona2.src}
+                <Image
+                  src={userpersona2}
                   alt="User persona 2"
                   className="chapter-image chapter-image-block"
+                  sizes="(max-width: 760px) 100vw, 60vw"
                 />
                 <p>
                   Together, these personas reveal the core experience gap: drivers across different routines—commuters, workers, and visitors—need to make fast parking decisions under time pressure, with limited context and often incomplete curb information. Their frustration centers on ambiguous signage, unclear exceptions, and the inability to confidently determine the correct parking status without reading dense, stacked rules.
@@ -146,18 +157,20 @@ export default function ParkSmartPage() {
               <p>
                 The design requirements centered on reducing cognitive load, preserving consistency across physical and digital touchpoints, and making the valid parking state obvious at a glance without sacrificing compliance details.
               </p>
-              <img
-                src={designRequirements.src}
+              <Image
+                src={designRequirements}
                 alt="Design requirements"
                 className="chapter-image chapter-image-block"
+                sizes="(max-width: 760px) 100vw, 60vw"
               />
               <p>
                 These requirements informed the storyboard sketches, which translated the parking pain points into a clearer flow: identify the valid status, understand the rule at a glance, and act with confidence before leaving the car.
               </p>
-              <img
-                src={storyboardsketches.src}
+              <Image
+                src={storyboardsketches}
                 alt="Storyboard sketches"
                 className="chapter-image chapter-image-block"
+                sizes="(max-width: 760px) 100vw, 60vw"
               />
             </div>
           </section>
@@ -176,10 +189,11 @@ export default function ParkSmartPage() {
               A QR code on the sign allows drivers to access a mobile app that provides additional information about the parking rules and restrictions.
             </p>
             <div className="chapter-image-wrap chapter-image-wrap-large">
-              <img
-                src={final_parkingsigns.src}
+              <Image
+                src={final_parkingsigns}
                 alt="Final parking signs"
                 className="chapter-image chapter-image-large"
+                sizes="(max-width: 760px) 100vw, 760px"
               />
             </div>
             <div className="chapter-subhead-wrap">
@@ -190,10 +204,11 @@ export default function ParkSmartPage() {
               Users can easily toggle the parking assistant and filter for free, paid, or restricted parking.
             </p>
             <div className="chapter-image-wrap chapter-image-wrap-large">
-              <img
-                src={final_mobile1.src}
+              <Image
+                src={final_mobile1}
                 alt="Mobile map app parking assist feature"
                 className="chapter-image chapter-image-large"
+                sizes="(max-width: 760px) 100vw, 760px"
               />
             </div>
             <p>
@@ -202,10 +217,11 @@ export default function ParkSmartPage() {
             On-map overlays display details like pricing, time limits, and active hours.
             </p>
             <div className="chapter-image-wrap chapter-image-wrap-large">
-              <img
-                src={final_mobile2.src}
+              <Image
+                src={final_mobile2}
                 alt="Mobile map app parking assist feature"
                 className="chapter-image chapter-image-large"
+                sizes="(max-width: 760px) 100vw, 760px"
               />
             </div>
             <p>
@@ -213,10 +229,11 @@ export default function ParkSmartPage() {
             Users can also start a parking timer from this page to track their parking duration.
             </p>
             <div className="chapter-image-wrap chapter-image-wrap-large">
-              <img
-                src={final_mobile3.src}
+              <Image
+                src={final_mobile3}
                 alt="Mobile map app parking assist feature"
                 className="chapter-image chapter-image-large"
+                sizes="(max-width: 760px) 100vw, 760px"
               />
             </div>
           </section>
@@ -227,7 +244,7 @@ export default function ParkSmartPage() {
               <div className="reflection-item">
                 <h3>Trust is Critical</h3>
                 <p>
-                  Drivers need to trust that the information they are receiving is accurate and up-to-date. If the system is not reliable or "official", drivers may ignore it or become frustrated, which can lead to non-compliance.
+                  Drivers need to trust that the information they are receiving is accurate and up-to-date. If the system is not reliable or &quot;official&quot;, drivers may ignore it or become frustrated, which can lead to non-compliance.
                 </p>
               </div>
 
