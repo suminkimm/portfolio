@@ -34,7 +34,7 @@ export default function TopNavigation() {
         <Link
           href="/#work"
           className={`relative no-underline opacity-[0.72] transition-all duration-[180ms] hover:font-bold hover:opacity-100 focus-visible:font-bold focus-visible:opacity-100 ${
-            isWorkActive ? "font-bold opacity-100" : ""
+            isWorkActive ? "font-bold text-[var(--accent)] opacity-100" : ""
           }`}
         >
           Work
@@ -42,7 +42,7 @@ export default function TopNavigation() {
         <Link
           href="/#about"
           className={`relative no-underline opacity-[0.72] transition-all duration-[180ms] hover:font-bold hover:opacity-100 focus-visible:font-bold focus-visible:opacity-100 ${
-            pathname === "/#about" ? "font-bold opacity-100" : ""
+            pathname === "/#about" ? "font-bold text-[var(--accent)] opacity-100" : ""
           }`}
         >
           About

@@ -49,20 +49,18 @@ export default function CustomCursor() {
     };
 
     const onHoverStart = () => {
-      setCursorSize(44, 2);
+      setCursorSize(12, 0);
     };
 
     const onHoverEnd = () => {
-      setCursorSize(40, 2);
+      setCursorSize(9, 0);
     };
 
     document.addEventListener("pointermove", handlePointerMove);
     document.addEventListener("pointerdown", handlePointerDown);
     document.addEventListener("pointerleave", handlePointerLeave);
 
-    const interactiveTargets = document.querySelectorAll(
-      "a, button, summary, .project-card, .demo-item, .main-nav a, .chapter-nav a, .back-link"
-    );
+    const interactiveTargets = document.querySelectorAll("a, button, summary");
     const videoTargets = document.querySelectorAll(".project-video-wrap");
 
     interactiveTargets.forEach((element) => {
@@ -73,7 +71,7 @@ export default function CustomCursor() {
       element.addEventListener("mouseenter", handleVideoEnter);
     });
 
-    setCursorSize(40, 2);
+    setCursorSize(9, 0);
     cursor.style.opacity = "0";
 
     return () => {

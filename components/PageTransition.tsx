@@ -44,5 +44,5 @@ export default function PageTransition({
     return () => window.clearTimeout(settleTimer);
   }, [pathname]);
 
-  return <div className={`page-transition-shell ${phase}`}>{children}</div>;
+  return <div className={`page-transition-shell relative z-[1] ${phase}`}>{children}</div>;
 }

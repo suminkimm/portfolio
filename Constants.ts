@@ -13,12 +13,3 @@ export const PROJECTS: Project[] = [
     year: "2025",
   },
 ];
-
-export const TOOLS = [
-  "React",
-  "TypeScript",
-  "Accessibility",
-  "Figma",
-  "Prototyping",
-  "User Research",
-] as const;
