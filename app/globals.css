@@ -186,6 +186,10 @@ Custom cursor
   transform: translate(-50%, -50%);
 }
 
+body:has(.project-video-wrap:hover) .custom-cursor {
+  opacity: 0 !important;
+}
+
 /* --------------------------------
 Page transitions
 -------------------------------- */
@@ -753,6 +757,7 @@ Project detail page
   position: relative;
   overflow: hidden;
   width: 100%;
+  cursor: auto;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.08);
   aspect-ratio: 16 / 9;
@@ -762,6 +767,7 @@ Project detail page
 .project-video {
   width: 100%;
   height: 100%;
+  cursor: auto;
   border: 0;
   display: block;
 }

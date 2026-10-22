@@ -44,6 +44,10 @@ export default function CustomCursor() {
       cursor.style.opacity = "0";
     };
 
+    const handleVideoEnter = () => {
+      cursor.style.opacity = "0";
+    };
+
     const onHoverStart = () => {
       setCursorSize(44, 2);
     };
@@ -59,10 +63,14 @@ export default function CustomCursor() {
     const interactiveTargets = document.querySelectorAll(
       "a, button, summary, .project-card, .demo-item, .main-nav a, .chapter-nav a, .back-link"
     );
+    const videoTargets = document.querySelectorAll(".project-video-wrap");
 
     interactiveTargets.forEach((element) => {
       element.addEventListener("mouseenter", onHoverStart);
       element.addEventListener("mouseleave", onHoverEnd);
+    });
+    videoTargets.forEach((element) => {
+      element.addEventListener("mouseenter", handleVideoEnter);
     });
 
     setCursorSize(40, 2);
@@ -75,6 +83,9 @@ export default function CustomCursor() {
       interactiveTargets.forEach((element) => {
         element.removeEventListener("mouseenter", onHoverStart);
         element.removeEventListener("mouseleave", onHoverEnd);
+      });
+      videoTargets.forEach((element) => {
+        element.removeEventListener("mouseenter", handleVideoEnter);
       });
 
       if (rafRef.current) {
