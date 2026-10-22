@@ -6,7 +6,7 @@ type WorkCardProps = {
   type: string;
   year: string;
   slug: string;
-  imageSrc?: string | StaticImageData;
+  imageSrc?: StaticImageData;
   isFeatured?: boolean;
 };
 
@@ -21,30 +21,21 @@ export default function WorkCard({
   return (
     <Link
       href={`/work/${slug}`}
-      className={`col-span-12 min-w-0 block w-full text-inherit no-underline max-[640px]:col-span-1 ${
-        isFeatured ? "mx-auto max-w-[760px]" : ""
-      }`}
+      className="mb-5 block min-w-0 break-inside-avoid text-inherit no-underline"
       aria-label={`Open case study for ${name}`}
     >
       <article
-        className={`relative flex h-full min-h-[280px] w-full flex-col overflow-hidden border border-[var(--line)] bg-white/[0.12] shadow-[0_8px_24px_transparent] transition-transform duration-[180ms] ease-in-out hover:-translate-y-1 hover:shadow-[0_18px_40px_var(--shadow)] focus-visible:-translate-y-1 focus-visible:shadow-[0_18px_40px_var(--shadow)] ${
-          isFeatured ? "min-h-[420px]" : ""
-        }`}
+        className="relative flex w-full flex-col overflow-hidden border border-[var(--line)] bg-white/[0.12] shadow-[0_8px_24px_transparent] transition-transform duration-[180ms] ease-in-out hover:-translate-y-1 hover:shadow-[0_18px_40px_var(--shadow)] focus-visible:-translate-y-1 focus-visible:shadow-[0_18px_40px_var(--shadow)]"
         tabIndex={0}
       >
-        <div
-          className={`relative flex min-h-[280px] flex-1 items-start justify-between bg-[linear-gradient(135deg,rgba(255,255,255,0.32),rgba(255,255,255,0.08))] p-4 ${
-            isFeatured ? "min-h-[320px]" : ""
-          }`}
-          aria-label={name}
-        >
+        <div className="relative w-full bg-[linear-gradient(135deg,rgba(255,255,255,0.32),rgba(255,255,255,0.08))]" aria-label={name}>
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt={name}
-              className="absolute inset-0 h-full w-full object-cover"
+              className="block h-auto w-full"
               loading={isFeatured ? "eager" : "lazy"}
-              sizes="(max-width: 760px) 100vw, 50vw"
+              sizes="(max-width: 640px) 100vw, 50vw"
             />
           ) : null}
         </div>

@@ -57,7 +57,7 @@ export default function Home() {
             Selected work
           </div>
 
-          <div className="grid grid-cols-12 items-start gap-5 max-[980px]:grid-cols-2 max-[640px]:grid-cols-1">
+          <div className="columns-1 gap-5 sm:columns-2">
             {PROJECTS.map((project) => (
               <WorkCard
                 key={project.name}
