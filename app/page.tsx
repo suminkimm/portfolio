@@ -17,7 +17,7 @@ export default function Home() {
               human-centered engineer
             </h2>
             <p className="m-0 text-left text-[clamp(0.9rem,1.1vw,1.2rem)] leading-[1.3] tracking-[-0.03em] text-white">
-              i love building human-centered products
+              I love building human-centered products
               <br />
               that people genuinely want to use.
             </p>

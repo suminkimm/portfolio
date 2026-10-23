@@ -29,8 +29,8 @@ export default function PersistentBackground() {
         />
       </div>
       <div className="gradient-intro">
-        <div className="gradient-intro-title">hi, i&apos;m su min!</div>
-        <div className="gradient-intro-subtitle">let&apos;s build something new.</div>
+        <div className="gradient-intro-title">Hi, I&apos;m Su Min!</div>
+        <div className="gradient-intro-subtitle">let&apos;s discover something new.</div>
       </div>
     </div>
   );
