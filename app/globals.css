@@ -304,6 +304,21 @@ Background
   letter-spacing: 0.02em;
 }
 
+@media (max-width: 640px) {
+  .persistent-background {
+    height: calc(94vw + 18rem);
+  }
+
+  .webgl-background,
+  .moon-clip {
+    top: 18rem;
+  }
+
+  .gradient-intro {
+    top: calc(18rem + 50vw);
+  }
+}
+
 /* --------------------------------
 Custom cursor
 -------------------------------- */
