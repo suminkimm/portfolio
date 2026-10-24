@@ -144,19 +144,6 @@ Background
   animation: star-twinkle var(--star-duration) ease-in-out var(--star-delay) infinite;
 }
 
-.shooting-star {
-  position: absolute;
-  width: clamp(28px, 4vw, 64px);
-  height: 1px;
-  transform: rotate(var(--shooting-angle));
-  transform-origin: left center;
-  background: linear-gradient(90deg, transparent, #d7fff4 55%, #ffffff);
-  box-shadow: 0 0 8px rgba(67, 245, 199, 0.8);
-  opacity: 0;
-  animation: shooting-star var(--shooting-duration) ease-out
-    var(--shooting-delay) infinite;
-}
-
 @keyframes star-twinkle {
   0%,
   100% {
@@ -240,41 +227,12 @@ Background
   background: #000000;
 }
 
-@keyframes shooting-star {
-  0% {
-    opacity: 0;
-    transform: rotate(var(--shooting-angle)) translateX(0) scaleX(0.2);
-  }
-
-  4% {
-    opacity: 1;
-  }
-
-  10% {
-    opacity: 0.9;
-  }
-
-  18% {
-    opacity: 0;
-    transform: rotate(var(--shooting-angle)) translateX(18vw) scaleX(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: rotate(var(--shooting-angle)) translateX(18vw) scaleX(1);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .star {
     animation: none;
     opacity: 0.45;
   }
 
-  .shooting-star {
-    animation: none;
-    opacity: 0;
-  }
 }
 
 .gradient-intro {

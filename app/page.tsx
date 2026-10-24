@@ -24,7 +24,7 @@ export default function Home() {
             </p>
             <p className="m-0 max-w-[24rem] text-right text-[clamp(0.9rem,1.1vw,1.2rem)] leading-[1.3] tracking-[-0.03em] text-white/90 sm:absolute sm:top-[42px] sm:right-0 max-[640px]:max-w-none max-[640px]:text-left">
               Currently at Microsoft building robust user experiences for the Azure Portal.
-              Also pursuing a MS in Human Centered Design Engineering at the University of Washington.
+              Pursuing a MS in Human Centered Design Engineering at the University of Washington.
             </p>
           </div>
         </section>
