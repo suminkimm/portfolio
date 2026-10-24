@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import moonForeground from "../app/images/moon - Edited.png";
 import GradientBackground from "./GradientBackground";
-import Starfield from "./Starfield";
 
 export default function PersistentBackground() {
   const pathname = usePathname();
@@ -16,7 +15,6 @@ export default function PersistentBackground() {
       className={`persistent-background ${isHome ? "is-visible" : "is-hidden"}`}
       aria-hidden="true"
     >
-      <Starfield />
       <GradientBackground />
       <div className="moon-clip">
         <Image
