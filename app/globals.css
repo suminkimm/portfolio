@@ -377,6 +377,24 @@ Page transitions
   transform: none;
 }
 
+.scroll-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.scroll-reveal-ready {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.scroll-reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .project-detail-page {
   position: relative;
   z-index: 1;
@@ -709,6 +727,13 @@ Reduced motion
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .scroll-reveal-ready,
+  .scroll-reveal-ready.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   *,
