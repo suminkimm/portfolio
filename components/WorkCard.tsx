@@ -5,6 +5,7 @@ type WorkCardProps = {
   name: string;
   type: string;
   year: string;
+  summary: string;
   slug: string;
   imageSrc?: StaticImageData;
   isFeatured?: boolean;
@@ -14,6 +15,7 @@ export default function WorkCard({
   name,
   type,
   year,
+  summary,
   slug,
   imageSrc,
   isFeatured,
@@ -25,7 +27,7 @@ export default function WorkCard({
       aria-label={`Open case study for ${name}`}
     >
       <article
-        className="relative flex w-full flex-col overflow-hidden border border-[var(--line)] bg-white/[0.12] shadow-[0_8px_24px_transparent] transition-transform duration-[180ms] ease-in-out hover:-translate-y-1 hover:shadow-[0_18px_40px_var(--shadow)] focus-visible:-translate-y-1 focus-visible:shadow-[0_18px_40px_var(--shadow)]"
+        className="group relative flex w-full flex-col overflow-hidden border border-[var(--line)] bg-white/[0.12] shadow-[0_8px_24px_transparent] transition-transform duration-[180ms] ease-in-out hover:-translate-y-1 hover:shadow-[0_18px_40px_var(--shadow)] focus-visible:-translate-y-1 focus-visible:shadow-[0_18px_40px_var(--shadow)]"
         tabIndex={0}
       >
         <div className="relative w-full bg-[linear-gradient(135deg,rgba(255,255,255,0.32),rgba(255,255,255,0.08))]" aria-label={name}>
@@ -38,6 +40,11 @@ export default function WorkCard({
               sizes="(max-width: 640px) 100vw, 50vw"
             />
           ) : null}
+          <div className="pointer-events-none absolute inset-0 flex items-end bg-black/75 p-5 opacity-0 transition-opacity duration-[180ms] group-hover:opacity-100 group-focus-visible:opacity-100">
+            <p className="m-0 max-w-[32rem] text-[clamp(1rem,1.4vw,1.35rem)] leading-[1.25] tracking-[-0.03em] text-white">
+              {summary}
+            </p>
+          </div>
         </div>
 
         <div className="flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1 px-[18px] pt-[18px] pb-4">

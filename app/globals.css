@@ -526,6 +526,35 @@ Project detail page
   color: rgba(255, 255, 255, 0.82);
 }
 
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  max-width: 760px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.project-facts div {
+  display: grid;
+  gap: 5px;
+}
+
+.project-facts span {
+  font-size: var(--type-caption);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.project-facts strong {
+  font-size: 0.95rem;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #ffffff;
+}
+
 .detail-chapter {
   display: grid;
   gap: 18px;
@@ -681,6 +710,42 @@ Project detail page
   max-width: 100%;
 }
 
+.testing-learnings-gallery {
+  gap: 40px;
+}
+
+.initial-prototypes-gallery {
+  display: grid;
+  gap: 28px;
+}
+
+.initial-sign-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.initial-sign-gallery .chapter-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.chapter-figure {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+}
+
+.chapter-figure figcaption {
+  max-width: 62ch;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.68);
+}
+
 /* --------------------------------
 Tablet
 -------------------------------- */
@@ -692,6 +757,14 @@ Tablet
 
   .project-detail-sidebar {
     position: static;
+  }
+
+  .project-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .initial-sign-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

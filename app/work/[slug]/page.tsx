@@ -7,6 +7,13 @@ import final_mobile1 from "../../../app/images/final_mobile1.png";
 import final_mobile2 from "../../../app/images/final_mobile2.png";
 import final_mobile3 from "../../../app/images/final_mobile3.png";
 import final_parkingsigns from "../../../app/images/final_parkingsigns.png";
+import initialMobile from "../../../app/images/initial_mobile.png";
+import initialParkingInfo from "../../../app/images/initial_parkingsign_info.jpg";
+import initialParkingPay from "../../../app/images/initial_parkingsign_pay.jpg";
+import initialParkingRed from "../../../app/images/initial_parkingsign_red.jpg";
+import initialParkingGreen from "../../../app/images/initial_parkingsign_green.jpeg";
+import revisionsMobile from "../../../app/images/revisions_mobile.png";
+import revisionsParkingSigns from "../../../app/images/revisions_parkingsigns.png";
 import storyboardsketches from "../../../app/images/storyboardsketches.png";
 import userpersona1 from "../../../app/images/userpersona1.png";
 import userpersona2 from "../../../app/images/userpersona2.png";
@@ -56,6 +63,24 @@ export default function ParkSmartPage() {
           <p className="project-summary">
             Simplifying complex street parking signage for downtown Seattle drivers.
           </p>
+          <div className="project-facts" aria-label="Project facts">
+            <div>
+              <span>Role</span>
+              <strong>UX researcher and product designer</strong>
+            </div>
+            <div>
+              <span>Team</span>
+              <strong>4 designers and researchers</strong>
+            </div>
+            <div>
+              <span>Contribution</span>
+              <strong>Research, parking-sign design, and mobile-app ideation</strong>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong>User-tested concept</strong>
+            </div>
+          </div>
 
           <div className="project-video-wrap">
             <iframe
@@ -71,11 +96,7 @@ export default function ParkSmartPage() {
             <div className="chapter-label">Overview</div>
             <h2>What if we could make street parking an intuitive experience?</h2>
             <p>
-              As part of the 8 week course in User Centered Design at the University of Washington, our team sought to create a solution that would simplify the street parking experience in Seattle. 
-            </p>
-            <p>
-              Park Smart was built to reduce the cognitive load of Seattle’s street parking experience by clarifying what the rule actually is in the moment.
-              The project focused on making parking decisions feel confident, faster, and less stressful for drivers navigating dense downtown conditions.
+              As part of an 8-week User Centered Design course at the University of Washington, our team created a user-tested concept to make Seattle street parking decisions clearer and less stressful. We did not collect quantitative outcome metrics, so the testing learnings below show how feedback shaped the final direction.
             </p>
           </section>
 
@@ -106,30 +127,13 @@ export default function ParkSmartPage() {
           <section id="user-research" className="detail-chapter">
             <div className="chapter-label">User Research</div>
             <h2>People want clarity more than extra information</h2>
-            <p>
-              Our team implemented a triangulated approach in order to increase the validity and reliability of the research findings. The research methods utilized were <strong>semi-structured interview, direct observation, and indirect observation</strong>.
-            </p>
-            <p>
-              Key Insights include:
-            </p>
-            <ul className="chapter-bullets">
-              <li>
-                <strong>Seattle’s parking signage is overly complex</strong>, forcing drivers to interpret multiple stacked rules at once, leading to high cognitive load and decision-making delays.
-              </li>
-              <li>
-                <strong>Exception text and dense wording are frequently overlooked</strong>, causing misunderstanding of time-based and special-case restrictions.
-              </li>
-              <li>
-                <strong>Signage confusion leads to real consequences</strong>, such as ticketing, towing, and risky or hesitant parking behavior.
-              </li>
-              <li>
-                <strong>Lack of clear curb markings and boundaries adds confusion</strong>, making drivers unsure where parking begins or ends.
-              </li>
-            </ul>
             <div className="chapter-subhead-wrap">
               <h3 className="chapter-subhead">USER PERSONAS</h3>
             </div>
             <div className="chapter-block-list chapter-block-list-personas">
+              <p>
+                  Together, these personas represent commuters, workers, and visitors who need to make fast parking decisions with limited context and incomplete curb information.
+              </p>
               <Image
                 src={userpersona1}
                 alt="User persona 1"
@@ -143,10 +147,85 @@ export default function ParkSmartPage() {
                   className="chapter-image chapter-image-block"
                   sizes="(max-width: 760px) 100vw, 60vw"
                 />
-                <p>
-                  Together, these personas reveal the core experience gap: drivers across different routines—commuters, workers, and visitors—need to make fast parking decisions under time pressure, with limited context and often incomplete curb information. Their frustration centers on ambiguous signage, unclear exceptions, and the inability to confidently determine the correct parking status without reading dense, stacked rules.
-                </p>
               </div>
+            </div>
+            <p>
+              We used <strong>semi-structured interviews, direct observation, and indirect observation</strong> to understand how people interpret parking rules under time pressure.
+            </p>
+            <ul className="chapter-bullets">
+              <li>
+                <strong>Stacked signage creates high cognitive load</strong>, delaying parking decisions.
+              </li>
+              <li>
+                <strong>Dense exception text is easy to miss</strong>, especially for time-based restrictions.
+              </li>
+              <li>
+                <strong>Unclear signs and curb boundaries create real consequences</strong>, including tickets, towing, and hesitant behaviour.
+              </li>
+            </ul>
+            <div className="chapter-subhead-wrap">
+              <h3 className="chapter-subhead">INITIAL PROTOTYPES</h3>
+            </div>
+            <div className="initial-prototypes-gallery">
+              <div className="initial-sign-gallery">
+                <Image
+                  src={initialParkingInfo}
+                  alt="Initial parking sign prototype with information icon"
+                  className="chapter-image"
+                  sizes="(max-width: 760px) 50vw, 360px"
+                />
+                <Image
+                  src={initialParkingPay}
+                  alt="Initial parking sign prototype with parking icon"
+                  className="chapter-image"
+                  sizes="(max-width: 760px) 50vw, 360px"
+                />
+                <Image
+                  src={initialParkingRed}
+                  alt="Initial parking sign prototype with red restriction icon"
+                  className="chapter-image"
+                  sizes="(max-width: 760px) 50vw, 360px"
+                />
+                <Image
+                  src={initialParkingGreen}
+                  alt="Initial parking sign prototype with green parking icon"
+                  className="chapter-image"
+                  sizes="(max-width: 760px) 50vw, 360px"
+                />
+              </div>
+              <Image
+                src={initialMobile}
+                alt="Initial mobile parking assistant prototypes"
+                className="chapter-image"
+                sizes="(max-width: 760px) 100vw, 760px"
+              />
+            </div>
+            <div className="chapter-subhead-wrap">
+              <h3 className="chapter-subhead">PROPOSED CHANGES AFTER USER TESTING</h3>
+            </div>
+            <div className="chapter-block-list testing-learnings-gallery">
+              <figure className="chapter-figure">
+                <Image
+                  src={revisionsParkingSigns}
+                  alt="Parking sign revisions showing clearer messages and updated QR code language"
+                  className="chapter-image"
+                  sizes="(max-width: 760px) 100vw, 760px"
+                />
+                <figcaption>
+                  We replaced ambiguous sign icons and generic QR-code copy with clearer parking states and regulation language.
+                </figcaption>
+              </figure>
+              <figure className="chapter-figure">
+                <Image
+                  src={revisionsMobile}
+                  alt="Mobile parking assistant revisions showing filters, map overlays, and live status details"
+                  className="chapter-image"
+                  sizes="(max-width: 760px) 100vw, 760px"
+                />
+                <figcaption>
+                  We added parking-assistant controls, map overlays, and live status details to support faster decisions.
+                </figcaption>
+              </figure>
             </div>
           </section>
 

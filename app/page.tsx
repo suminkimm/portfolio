@@ -49,6 +49,7 @@ export default function Home() {
                   name={project.name}
                   type={project.type}
                   year={project.year}
+                  summary={project.summary}
                   slug={project.slug}
                   imageSrc={final_parkingsign_green}
                   isFeatured
