@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import CustomCursor from "../components/CustomCursor";
 import PageTransition from "../components/PageTransition";
 import PersistentBackground from "../components/PersistentBackground";
 import "./globals.css";
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <PersistentBackground />

@@ -1,4 +1,3 @@
-import final_parkingsign_green from "./images/final_parkingsign_green.png";
 import TopNavigation from "../components/TopNavigation";
 import WorkCard from "../components/WorkCard";
 import ScrollReveal from "../components/ScrollReveal";
@@ -51,7 +50,7 @@ export default function Home() {
                   year={project.year}
                   summary={project.summary}
                   slug={project.slug}
-                  imageSrc={final_parkingsign_green}
+                  imageSrc={project.imgSrc}
                   isFeatured
                 />
               ))}
