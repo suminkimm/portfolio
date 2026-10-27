@@ -8,24 +8,24 @@ export default function Home() {
     <main className="relative z-[1] isolate min-h-screen cursor-none pb-7">
       <TopNavigation />
       <div className="relative w-full px-4 sm:px-[2vw] lg:px-8">
-        <section
-          className="relative flex min-h-screen flex-col justify-center gap-6 py-24"
-          aria-labelledby="hero-title"
-        >
-<div className="z-[1] grid w-[50vw] max-w-[58rem] gap-5 text-left">
-  <h1
-    id="hero-title"
-    className="m-0 w-full text-[clamp(2.75rem,6vw,7.5rem)] font-bold leading-[0.95] tracking-[-0.07em] text-white"
-  >
-    Su Min Kim builds thoughtful digital experiences.
-  </h1>
-  <p className="m-0 w-full text-[clamp(1.05rem,1.5vw,1.6rem)] leading-[1.3] tracking-[-0.035em] text-white/90">
-    I&apos;m a frontend engineer at Microsoft exploring the intersection of engineering,
-    interaction design, and human-centered technology. I'm also currently pursuing a MS in
-    Human Centered Design Engineering at the University of Washington.
-  </p>
-</div>
-        </section>
+<section
+  className="relative flex min-h-screen flex-col justify-center gap-6 py-24 pb-36 sm:py-24 lg:pb-24"
+  aria-labelledby="hero-title"
+>
+  <div className="z-[1] grid w-full max-w-[58rem] gap-5 text-left md:w-[50vw]">
+    <h1
+      id="hero-title"
+      className="m-0 w-full text-[clamp(2.75rem,6vw,7.5rem)] font-bold leading-[0.95] tracking-[-0.07em] text-white"
+    >
+      Su Min Kim builds thoughtful digital experiences.
+    </h1>
+    <p className="m-0 w-full text-[clamp(1.05rem,1.5vw,1.6rem)] leading-[1.3] tracking-[-0.035em] text-white/90">
+      I&apos;m a frontend engineer at Microsoft exploring the intersection of engineering,
+      interaction design, and human-centered technology. I&apos;m also currently pursuing an MS in
+      Human Centered Design Engineering at the University of Washington.
+    </p>
+  </div>
+</section>
 
         <ScrollReveal>
           <section

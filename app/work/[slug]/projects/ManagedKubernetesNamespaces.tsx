@@ -41,20 +41,20 @@ export default function ManagedKubernetesNamespacesPage() {
           <div className="project-kicker">Microsoft • Azure Kubernetes Service</div>
           <h1 id="project-title">Managed Kubernetes Namespaces</h1>
           <p className="project-summary">
-            Creating a clear Azure Portal experience for Managed Kubernetes Namespaces.
+            Designing and engineering a governed namespace experience for multi-tenant Kubernetes.
           </p>
           <div className="project-facts" aria-label="Project facts">
             <div>
               <span>Role</span>
-              <strong>Frontend engineer</strong>
+              <strong>Software engineer</strong>
             </div>
             <div>
               <span>Product</span>
               <strong>Azure Kubernetes Service</strong>
             </div>
             <div>
-              <span>Contribution</span>
-              <strong>Responsible for developing the Manage experience</strong>
+              <span>Responsibilities</span>
+              <strong>UX engineering, technical design, Portal architecture, accessibility, testing, launch readiness</strong>
             </div>
             <div>
               <span>Documentation</span>
@@ -78,17 +78,20 @@ export default function ManagedKubernetesNamespacesPage() {
 
           <section id="overview" className="detail-chapter">
             <div className="chapter-label">Overview</div>
-            <h2>Make namespace management understandable and actionable</h2>
+            <h2>Turning Kubernetes namespaces into governed Azure resources</h2>
             <p>
-              Managed Kubernetes Namespaces extend AKS with a resource experience for teams that need to organize workloads and apply consistent controls within a cluster. I was the frontend engineer responsible for creating the Manage experience in the Azure Portal, bringing namespace configuration and lifecycle actions into one clear workflow.
+              Managed Kubernetes Namespaces (MKN) lets platform teams manage Kubernetes namsepaces as Azure resources, with built-in access controls, resource quotas, network policies, and lifecycle management. 
+              <strong> I helped translate that new platform capability into an integrated Azure Portal experience.</strong>
             </p>
           </section>
 
           <section id="problem" className="detail-chapter">
             <div className="chapter-label">Problem</div>
-            <h2>Namespace operations needed a clear home in the Portal</h2>
+            <h2>Namespace government required too much manual work</h2>
             <p>
-              Kubernetes namespace management can span several concepts at once: workload organization, network policies, compute quotas, labels, annotations, and lifecycle decisions. The Manage experience needed to make those controls discoverable without forcing customers to rely on YAML or separate Kubernetes tooling for routine operations.
+              Platform teams often build their own processes to provision namespaces, configure policies, and delegate access.
+              MKN provides these capabilities natively, allowing teams to manage their own namespaces without requiring broader cluster access.
+              <strong> The UX challenge here was making this new management model feel like a natural extension of the existing AKS experience rather than introducing another disconnected Azure workflow.</strong>
             </p>
           </section>
 
@@ -96,7 +99,16 @@ export default function ManagedKubernetesNamespacesPage() {
             <div className="chapter-label">Solution</div>
             <h2>Bring browsing and management actions into one resource experience</h2>
             <p>
-              I built the Portal experience around the namespace resource: customers can browse workloads, inspect the namespace overview, edit properties and metadata, and choose how to handle deletion.
+              I wrote the engineering specification and owned significant parts of the Portal management experience. My work included:
+            </p>
+            <ul className="chapter-bullets">
+              <li>Integrating MKN into existing AKS workflows</li>
+              <li>Building management and lifecycle experiences</li>
+              <li>Designing for delegated permissions</li>
+            </ul>
+            <p>
+              I connected this experience to existing workflows for workloads, events, YAML, and deployment while adding Azure-managed configuration and lifecycle actions.
+              Users could move between governance, configuration, and workloads without leaving the namespace context.
             </p>
             <Image
               src={browseBlades}
@@ -135,22 +147,24 @@ export default function ManagedKubernetesNamespacesPage() {
 
           <section id="engineering" className="detail-chapter">
             <div className="chapter-label">Engineering complexity</div>
-            <h2>Turning Kubernetes operations into approachable Portal interactions</h2>
+            <h2>Hiding the complexity of Kubernetes management behind a simple experience</h2>
             <p>
-              The Manage experience had to represent Kubernetes concepts accurately while fitting Azure Portal patterns for navigation, editing, validation, and destructive actions. The implementation connected the resource overview to workload browsing, property editing, metadata updates, and lifecycle decisions across static views and interactive flows.
+              The UI presents MKN as one resource, but the experience had to coordinate multiple systems underneath it.
             </p>
             <div className="chapter-block-list">
               <p>
-                <strong>Resource context:</strong> kept namespace identity, cluster context, and Kubernetes configuration visible across the management experience.
+                <strong>Reconciling ARM and Kubernetes data</strong> 
+                <p>MKN configuration came from Azure Resource Manager, while its Kubernetes resources (deployments, pods, etc) came from the cluster. The Portal experience had to combine both into a coherent resource view.</p>
               </p>
               <p>
-                <strong>Configuration:</strong> translated networking policies and compute quotas into focused Portal controls.
+                <strong>Supporting delegated permissions</strong>
+                <p>Users could have permission to a MKN without having direct access to the underlying Kubernetes cluster.
+                  Existing experiences sometimes assumed cluster-wide access, requiring workflows and actions to work correctly under a narrower scope.
+                </p>
               </p>
               <p>
-                <strong>Metadata:</strong> supported editing labels and annotations while preserving the relationship between Portal fields and Kubernetes values.
-              </p>
-              <p>
-                <strong>Lifecycle safety:</strong> separated conversion back to a Kubernetes Namespace from permanent deletion and required an explicit confirmation.
+                <strong>Handling resource lifecycle across systems</strong> 
+                <p>A MKN and its Kubernetes namespace have related but distinct lifecycles. Creation, adoption, deletion, and stopped-cluster scenarios all required careful edge case handling to avoid misleading interactions.</p>
               </p>
             </div>
           </section>
@@ -158,9 +172,12 @@ export default function ManagedKubernetesNamespacesPage() {
           <section id="outcome" className="detail-chapter reflection-section">
             <div className="chapter-label">Outcome</div>
             <h2>A complete management path for managed namespaces</h2>
-            <p>
-              The Manage experience gives AKS customers a central place to browse workloads, configure namespace properties, update metadata, and make informed lifecycle decisions. It brings common namespace operations into the Azure Portal while preserving the Kubernetes context needed to manage workloads confidently.
+            <p style={{ color: "#43f5c7" }}>
+              <strong>
+                Monthly active users grew more than 5x in the first month after launch to general access.
+              </strong>              
             </p>
+            <p>The Manage experience gives AKS customers a central place to browse workloads, configure namespace properties, update metadata, and make informed lifecycle decisions. It brings common namespace operations into the Azure Portal while preserving the Kubernetes context needed to manage workloads confidently.</p>
           </section>
         </article>
       </div>

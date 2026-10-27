@@ -34,9 +34,12 @@ export default function ApplicationInsightsPage() {
           <h1 id="project-title">Application Insights for AKS</h1>
           <p className="project-summary">Bringing application-level telemetry into the Kubernetes troubleshooting workflow.</p>
           <div className="project-facts" aria-label="Project facts">
-            <div><span>Role</span><strong>Frontend engineer</strong></div>
+            <div><span>Role</span><strong>Software engineer</strong></div>
             <div><span>Product</span><strong>Azure Kubernetes Service</strong></div>
-            <div><span>Audience</span><strong>AKS customers monitoring production workloads</strong></div>
+            <div>
+              <span>Responsibilities</span>
+              <strong>UX engineering, technical design, Portal architecture, accessibility, testing, launch readiness</strong>
+            </div>
             <div>
               <span>Documentation</span>
               <a href={APPLICATION_INSIGHTS_DOCUMENTATION_URL} target="_blank" rel="noreferrer" className="font-bold text-white/90 no-underline">Microsoft Learn ↗</a>
@@ -84,6 +87,11 @@ export default function ApplicationInsightsPage() {
           <section id="outcome" className="detail-chapter reflection-section">
             <div className="chapter-label">Outcome</div>
             <h2>More visibility without leaving the AKS workflow</h2>
+            <p style={{ color: "#43f5c7" }}>
+              <strong>
+                The new experience reached about 3.5x the unique users of launch week within the first month.
+              </strong>              
+            </p>
             <p>Application performance metrics now appear directly inside AKS resource blades, increasing visibility and strengthening customers’ troubleshooting capabilities. Customers can start with the Kubernetes resource they understand, see the application signals that matter, and move into the full Application Insights experience when they need deeper investigation.</p>
           </section>
         </article>
