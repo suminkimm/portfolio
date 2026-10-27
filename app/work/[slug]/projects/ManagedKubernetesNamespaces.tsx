@@ -41,7 +41,7 @@ export default function ManagedKubernetesNamespacesPage() {
           <div className="project-kicker">Microsoft • Azure Kubernetes Service</div>
           <h1 id="project-title">Managed Kubernetes Namespaces</h1>
           <p className="project-summary">
-            Creating a clear Azure Portal experience for managing Kubernetes namespaces.
+            Creating a clear Azure Portal experience for Managed Kubernetes Namespaces.
           </p>
           <div className="project-facts" aria-label="Project facts">
             <div>
@@ -50,15 +50,11 @@ export default function ManagedKubernetesNamespacesPage() {
             </div>
             <div>
               <span>Product</span>
-              <strong>Azure Portal and AKS</strong>
+              <strong>Azure Kubernetes Service</strong>
             </div>
             <div>
               <span>Contribution</span>
-              <strong>Responsible for creating the Manage experience</strong>
-            </div>
-            <div>
-              <span>Focus</span>
-              <strong>Namespace browsing, properties, metadata, and deletion flows</strong>
+              <strong>Responsible for developing the Manage experience</strong>
             </div>
             <div>
               <span>Documentation</span>

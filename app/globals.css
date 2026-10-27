@@ -139,7 +139,6 @@ Background
   isolation: isolate;
   opacity: 0;
   filter: none;
-  box-shadow: 0 0 90px 24px rgba(228, 77, 190, 0.16);
   transition: opacity 500ms ease;
 }
 

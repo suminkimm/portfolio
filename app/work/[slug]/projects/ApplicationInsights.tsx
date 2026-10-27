@@ -35,9 +35,8 @@ export default function ApplicationInsightsPage() {
           <p className="project-summary">Bringing application-level telemetry into the Kubernetes troubleshooting workflow.</p>
           <div className="project-facts" aria-label="Project facts">
             <div><span>Role</span><strong>Frontend engineer</strong></div>
-            <div><span>Product</span><strong>Azure Portal and Application Insights</strong></div>
-            <div><span>Focus</span><strong>Portal integration, data visualisation, and workload filtering</strong></div>
-            <div><span>Audience</span><strong>AKS customers troubleshooting production workloads</strong></div>
+            <div><span>Product</span><strong>Azure Kubernetes Service</strong></div>
+            <div><span>Audience</span><strong>AKS customers monitoring production workloads</strong></div>
             <div>
               <span>Documentation</span>
               <a href={APPLICATION_INSIGHTS_DOCUMENTATION_URL} target="_blank" rel="noreferrer" className="font-bold text-white/90 no-underline">Microsoft Learn ↗</a>
