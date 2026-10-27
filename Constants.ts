@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/dist/api/image";
 import final_parkingsign_green from "./app/images/parkSmart/final_parkingsign_green.png";
-import appinsights_deployments from "./app/images/appInsights/appinsights_deployments.png";
-import managedNamespaces_overview from "./app/images/managedNamespaces/overview.png";
+import appinsights_main from "./app/images/appInsights/application-insights-for-aks.png";
+import managedNamespaces_main from "./app/images/managedNamespaces/Managed Kubernetes Namespaces.png";
 
 type Project = {
   slug: string;
@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     type: "Microsoft",
     year: "2026",
     summary: "A focused Azure Portal management experience for configuring, browsing, and safely deleting managed Kubernetes namespaces.",
-    imgSrc: managedNamespaces_overview,
+    imgSrc: managedNamespaces_main,
   },
   {
     slug: "application-insights-aks",
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     type: "Microsoft",
     year: "2026",
     summary: "Bringing application telemetry into AKS so customers can troubleshoot workloads without leaving the Kubernetes context.",
-    imgSrc: appinsights_deployments,
+    imgSrc: appinsights_main,
   },
   {
     slug: "park-smart",
