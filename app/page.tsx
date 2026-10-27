@@ -73,16 +73,16 @@ export default function Home() {
             <div className="grid grid-cols-[minmax(0,1.5fr)_minmax(260px,0.7fr)] items-start gap-8 max-[980px]:grid-cols-1">
               <div className="grid gap-[22px]">
                 <p className="m-0 text-[clamp(1.35rem,2vw,2.6rem)] leading-[1.3] tracking-[-0.05em] text-white/88">
-                  I’m currently a frontend engineer at Microsoft working on the Azure Portal for Azure Kubernetes Services (AKS).
-                  I’m also pursuing a Master’s degree in Human Centered Design and Engineering at the University of Washington.
+                  I’m currently a software engineer at Microsoft working on the Azure Portal for Azure Kubernetes Services (AKS).
+                  I shape user experiences and guide product decisions to ensure they’re both user-centered and technically sound.
                 </p>
                 <p className="m-0 text-[clamp(1.35rem,2vw,2.6rem)] leading-[1.3] tracking-[-0.05em] text-white/88">
                   I love building things at the intersection of code and design.
-                  I’m particularly interested in creative tools and the ways technology can support people in a seamless way.
+                  I’m also pursuing a Master’s degree in Human Centered Design and Engineering at the University of Washington.
                 </p>
                 <p className="m-0 text-[clamp(1.35rem,2vw,2.6rem)] leading-[1.3] tracking-[-0.05em] text-white/88">
                   Outside of work and school, you’ll usually find me creating something with my hands,
-                  whether that’s a digital illustration, a knitted sweater, or clay trinkets.
+                  whether that’s an acrylic painting, a knitted sweater, or clay trinkets.
                 </p>
               </div>
             </div>
