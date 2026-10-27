@@ -9,23 +9,22 @@ export default function Home() {
       <TopNavigation />
       <div className="relative w-full px-4 sm:px-[2vw] lg:px-8">
         <section
-          className="relative flex min-h-[calc(min(94vw,1120px)+clamp(3rem,8vw,8rem)-4rem)] flex-col gap-[clamp(48px,12vw,72px)] pt-[42px] max-[640px]:min-h-[calc(94vw+18rem)] max-[640px]:gap-6 max-[640px]:pt-8"
+          className="relative flex min-h-screen flex-col justify-center gap-6 py-24"
           aria-labelledby="hero-title"
         >
-          <div className="z-[1] grid max-w-[28rem] gap-2 text-left">
-            <h2 className="m-0 text-left text-[clamp(1.35rem,2.2vw,2.5rem)] font-bold leading-[1] tracking-[-0.06em] text-white">
-              human-centered engineer
-            </h2>
-            <p className="m-0 text-left text-[clamp(0.9rem,1.1vw,1.2rem)] leading-[1.3] tracking-[-0.03em] text-white">
-              I love building human-centered products
-              <br />
-              that people genuinely want to use.
-            </p>
-            <p className="m-0 max-w-[24rem] text-right text-[clamp(0.9rem,1.1vw,1.2rem)] leading-[1.3] tracking-[-0.03em] text-white/90 sm:absolute sm:top-[42px] sm:right-0 max-[640px]:max-w-none max-[640px]:text-left">
-              Currently at Microsoft building robust user experiences for the Azure Portal.
-              Pursuing a MS in Human Centered Design Engineering at the University of Washington.
-            </p>
-          </div>
+<div className="z-[1] grid w-[50vw] max-w-[58rem] gap-5 text-left">
+  <h1
+    id="hero-title"
+    className="m-0 w-full text-[clamp(2.75rem,6vw,7.5rem)] font-bold leading-[0.95] tracking-[-0.07em] text-white"
+  >
+    Su Min Kim builds thoughtful digital experiences.
+  </h1>
+  <p className="m-0 w-full text-[clamp(1.05rem,1.5vw,1.6rem)] leading-[1.3] tracking-[-0.035em] text-white/90">
+    I&apos;m a frontend engineer at Microsoft exploring the intersection of engineering,
+    interaction design, and human-centered technology. I'm also currently pursuing a MS in
+    Human Centered Design Engineering at the University of Washington.
+  </p>
+</div>
         </section>
 
         <ScrollReveal>
