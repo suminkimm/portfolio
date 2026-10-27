@@ -12,6 +12,13 @@ export default function ProjectToc({ chapters }: { chapters: Chapter[] }) {
 
   useEffect(() => {
     const updateActiveSection = () => {
+      const isAtDocumentEnd =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (isAtDocumentEnd) {
+        setActiveChapterId(chapters.at(-1)?.id ?? "");
+        return;
+      }
+
       const hashId = window.location.hash.replace("#", "");
       if (hashId && chapters.some((chapter) => chapter.id === hashId)) {
         setActiveChapterId(hashId);
