@@ -20,7 +20,7 @@ export default function Home() {
       Su Min Kim builds thoughtful digital experiences.
     </h1>
     <p className="m-0 w-full text-[clamp(1.05rem,1.5vw,1.6rem)] leading-[1.3] tracking-[-0.035em] text-white/90">
-      I&apos;m a frontend engineer at Microsoft exploring the intersection of engineering,
+      I&apos;m a software engineer at Microsoft exploring the intersection of engineering,
       interaction design, and human-centered technology. I&apos;m also currently pursuing an MS in
       Human Centered Design Engineering at the University of Washington.
     </p>
