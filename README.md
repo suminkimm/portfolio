@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Su Min Kim — Portfolio
 
-## Getting Started
+Personal portfolio built with Next.js (App Router), React, TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/
+  layout.tsx              Root layout: font, metadata, cursor, site frame
+  page.tsx                Home (hero + project grid)
+  about/page.tsx          About (bio, experience, photo gallery)
+  work/[slug]/page.tsx    Project route; maps each slug to its case study
+  work/[slug]/projects/   One component per case study
+  images/                 Static images, grouped by page/project
+  globals.css             Design tokens, base styles, motion, project-page styles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+components/
+  layout/                 Site chrome: SiteFrame, SideNavigation, Footer, PageContainer,
+                          PageTransition, CustomCursor
+  motion/                 Reusable animation wrappers: HeroReveal, RevealGroup, RollingTime
+  home/                   Homepage pieces (WorkCard)
+  project/                Case-study building blocks: ProjectLayout, ProjectChapter,
+                          ProjectImage, ProjectToc, DocumentationLink
 
-## Learn More
+content/
+  site.ts                 Name, contact details, navigation
+  projects.ts             Project list shown on the homepage
+  about.ts                Experience and gallery data for the About page
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Common edits
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Add a project**: add an entry to `content/projects.ts`, create its case study in
+  `app/work/[slug]/projects/`, and register it in `PROJECT_PAGES` in `app/work/[slug]/page.tsx`.
+  TypeScript flags a missing registration.
+- **Update experience or photos**: edit `content/about.ts`.
+- **Change the accent color**: edit `--accent` in `app/globals.css`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All motion respects `prefers-reduced-motion`.
