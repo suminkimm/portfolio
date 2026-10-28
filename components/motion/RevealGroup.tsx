@@ -43,7 +43,8 @@ export default function RevealGroup({ as: Tag = "div", children, className }: Re
             observer.unobserve(item);
           });
       },
-      { threshold: 0.1 },
+      // Trigger once an item's top passes the bottom 10% of the viewport, regardless of its height
+      { rootMargin: "0px 0px -10% 0px" },
     );
 
     items.forEach((item) => observer.observe(item));

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Footer from "@/components/layout/Footer";
+import HeroReveal from "@/components/motion/HeroReveal";
+import RevealGroup from "@/components/motion/RevealGroup";
 import ProjectToc, { type Chapter } from "./ProjectToc";
 
 export type ProjectFact = {
@@ -45,22 +47,29 @@ export default function ProjectLayout({
         </aside>
 
         <article className="project-detail-content" aria-labelledby="project-title">
-          <div className="project-kicker">{kicker}</div>
-          <h1 id="project-title" className="project-title">
-            {title}
-          </h1>
-          <p className="project-summary">{summary}</p>
-          {facts && (
-            <dl className="project-facts" aria-label="Project facts">
-              {facts.map(({ label, value }) => (
-                <div key={label}>
-                  <dt>{label}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          )}
-          {children}
+          {/* Header lines rise in on the first view of each project; chapters reveal as they scroll in */}
+          <HeroReveal id={`project-${title}`} className="grid gap-6">
+            <div data-hero-line className="project-kicker [--line:0]">
+              {kicker}
+            </div>
+            <h1 id="project-title" data-hero-line className="project-title [--line:1]">
+              {title}
+            </h1>
+            <p data-hero-line className="project-summary [--line:2]">
+              {summary}
+            </p>
+            {facts && (
+              <dl data-hero-line className="project-facts [--line:3]" aria-label="Project facts">
+                {facts.map(({ label, value }) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </HeroReveal>
+          <RevealGroup className="grid gap-6">{children}</RevealGroup>
         </article>
       </div>
 
