@@ -1,32 +1,29 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
-import CustomCursor from "../components/CustomCursor";
-import PageTransition from "../components/PageTransition";
-import PersistentBackground from "../components/PersistentBackground";
+import { Figtree } from "next/font/google";
+import CustomCursor from "@/components/layout/CustomCursor";
+import SiteFrame from "@/components/layout/SiteFrame";
+import { SITE } from "@/content/site";
 import "./globals.css";
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
-  weight: ["400", "700"],
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Su Min Kim | Frontend Engineer",
-  description:
-    "Portfolio for Su Min Kim, a frontend engineer blending design systems thinking with polished product craft.",
+  title: {
+    default: SITE.title,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${instrumentSans.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <PersistentBackground />
+    <html lang="en" className={`${figtree.variable} antialiased`}>
+      <body>
         <CustomCursor />
-        <PageTransition>{children}</PageTransition>
+        <SiteFrame>{children}</SiteFrame>
       </body>
     </html>
   );
