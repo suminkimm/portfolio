@@ -1,5 +1,5 @@
 import browseBlades from "@/app/images/managedNamespaces/browseBlades.gif";
-import deleteMN from "@/app/images/managedNamespaces/deleteMN.png";
+import deleteMN from "@/app/images/managedNamespaces/deleteMN.gif";
 import editMetadata from "@/app/images/managedNamespaces/editMetadata.gif";
 import editProperties from "@/app/images/managedNamespaces/editProperties.gif";
 import overview from "@/app/images/managedNamespaces/overview.png";
