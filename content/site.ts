@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Su Min Kim",
-  title: "Su Min Kim | Frontend Engineer",
+  title: "Su Min Kim | Software Engineer",
   description:
-    "Portfolio for Su Min Kim, a frontend engineer blending design systems thinking with polished product craft.",
+    "Portfolio for Su Min Kim, a software engineer who designs and codes digital products.",
   email: "kims622@gmail.com",
   linkedInUrl: "https://www.linkedin.com/in/su-min-kim/",
   location: "Seattle, WA",

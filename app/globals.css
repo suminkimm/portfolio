@@ -368,6 +368,8 @@ summary:focus-visible {
   gap: --spacing(4);
   padding-top: --spacing(6);
   border-top: 1px solid var(--color-line);
+  /* Leaves room above a chapter when jumping to it from the table of contents */
+  scroll-margin-top: --spacing(12);
 }
 
 .chapter-subhead {

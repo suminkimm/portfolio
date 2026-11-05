@@ -8,7 +8,7 @@ export type Chapter = {
 };
 
 // A chapter becomes active once its top scrolls above this offset from the viewport top
-const ACTIVE_OFFSET_PX = 180;
+const ACTIVE_OFFSET_PX = 120;
 
 function findActiveChapterId(chapters: Chapter[]) {
   const isAtDocumentEnd =

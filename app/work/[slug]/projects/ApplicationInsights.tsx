@@ -5,12 +5,16 @@ import appInsightsPods from "@/app/images/appInsights/appinsights_pods.png";
 import DocumentationLink from "@/components/project/DocumentationLink";
 import ProjectChapter from "@/components/project/ProjectChapter";
 import ProjectImage from "@/components/project/ProjectImage";
+import ProjectImpact from "@/components/project/ProjectImpact";
 import ProjectLayout from "@/components/project/ProjectLayout";
 import { DOCUMENTATION_URLS } from "@/content/projects";
+
+const IMPACT = "The new experience reached about 3.5x the unique users of launch week within the first month.";
 
 const CHAPTERS = [
   { id: "overview", label: "Overview" },
   { id: "problem", label: "Problem" },
+  { id: "impact", label: "Impact" },
   { id: "solution", label: "Solution" },
   { id: "engineering", label: "Engineering complexity" },
   { id: "outcome", label: "Outcome" },
@@ -57,6 +61,8 @@ export default function ApplicationInsights() {
         </p>
         <ProjectImage src={appInsightsDashboard} alt="Application Insights dashboard" />
       </ProjectChapter>
+
+      <ProjectImpact>{IMPACT}</ProjectImpact>
 
       <ProjectChapter id="solution" label="Solution" title="Surface the right signals at the resource level">
         <p>
@@ -113,9 +119,7 @@ export default function ApplicationInsights() {
 
       <ProjectChapter id="outcome" label="Outcome" title="More visibility without leaving the AKS workflow">
         <p>
-          <strong>
-            The new experience reached about 3.5x the unique users of launch week within the first month.
-          </strong>
+          <strong>{IMPACT}</strong>
         </p>
         <p>
           Application performance metrics now appear directly inside AKS resource blades, increasing visibility

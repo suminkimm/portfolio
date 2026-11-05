@@ -6,12 +6,16 @@ import overview from "@/app/images/managedNamespaces/overview.png";
 import DocumentationLink from "@/components/project/DocumentationLink";
 import ProjectChapter from "@/components/project/ProjectChapter";
 import ProjectImage from "@/components/project/ProjectImage";
+import ProjectImpact from "@/components/project/ProjectImpact";
 import ProjectLayout from "@/components/project/ProjectLayout";
 import { DOCUMENTATION_URLS } from "@/content/projects";
+
+const IMPACT = "Monthly active users grew more than 5x in the first month after launch to general access.";
 
 const CHAPTERS = [
   { id: "overview", label: "Overview" },
   { id: "problem", label: "Problem" },
+  { id: "impact", label: "Impact" },
   { id: "solution", label: "Solution" },
   { id: "engineering", label: "Engineering complexity" },
   { id: "outcome", label: "Outcome" },
@@ -66,6 +70,8 @@ export default function ManagedKubernetesNamespaces() {
           </strong>
         </p>
       </ProjectChapter>
+
+      <ProjectImpact>{IMPACT}</ProjectImpact>
 
       <ProjectChapter
         id="solution"
@@ -152,7 +158,7 @@ export default function ManagedKubernetesNamespaces() {
 
       <ProjectChapter id="outcome" label="Outcome" title="A complete management path for managed namespaces">
         <p>
-          <strong>Monthly active users grew more than 5x in the first month after launch to general access.</strong>
+          <strong>{IMPACT}</strong>
         </p>
         <p>
           The Manage experience gives AKS customers a central place to browse workloads, configure namespace
