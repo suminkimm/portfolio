@@ -190,7 +190,7 @@ export default function DesignSystem() {
 
       <ProjectChapter id="components" label="Components">
         <ChapterSubhead>Project card</ChapterSubhead>
-        <p className="m-0 text-ink-muted">Hover to see the scale-down and caption reveal.</p>
+        <p className="m-0 text-ink-muted">Hover to see the card grow, its edge nearest the cursor pick up a faint green glow, and the caption appear.</p>
         <div className="max-w-column">
           <WorkCard project={PROJECTS[0]} />
         </div>

@@ -11,7 +11,6 @@
 @theme {
   /* Color: one surface, one ink at three strengths, one accent */
   --color-*: initial;
-  --color-cream: #f3efe8;
   --color-white: #ffffff;
   --color-ink: #111111;
   --color-ink-muted: rgb(17 17 17 / 0.55);
@@ -114,7 +113,7 @@ body {
   font-size: var(--text-body);
   line-height: var(--text-body--line-height);
   color: var(--color-ink);
-  background: var(--color-cream);
+  background: var(--color-white);
 }
 
 img {
@@ -201,6 +200,41 @@ summary:focus-visible {
 
 .page-transition > * {
   animation: page-enter var(--duration-base) var(--ease-out-expo) backwards;
+}
+
+/* Project card border (see CardGlowBorder): a layer behind the card, showing as a 1px edge around it.
+   It stays inside the card's box, since anything poking out changes how the cards split into columns.
+   Its glow follows the cursor, so on hover only the nearest edge picks up a faint green light. */
+.card-glow-border {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-line);
+  pointer-events: none;
+}
+
+.card-glow-border__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  aspect-ratio: 1;
+  /* Like Stripe's purple-to-magenta border: the accent at the cursor, shading into neighboring hues.
+     These two colors exist only for this glow. */
+  background: radial-gradient(circle, var(--color-accent), #2f9e8f 30%, #b7d36b 50%, transparent 68%);
+  opacity: 0;
+  translate: calc(-50% + var(--glow-x, 0px)) calc(-50% + var(--glow-y, 0px));
+  transition:
+    opacity 250ms linear,
+    translate 1s var(--ease-out-expo);
+}
+
+/* Only for a mouse, and not with reduced motion; touch and reduced motion keep the plain gray edge */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .group:hover .card-glow-border__glow {
+    opacity: 0.6;
+  }
 }
 
 @keyframes page-enter {

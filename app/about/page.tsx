@@ -17,7 +17,7 @@ const ASPECT_CLASSES: Record<GalleryPhoto["aspect"], string> = {
 
 function Bio() {
   return (
-    <section className="max-w-column pt-12 text-body text-ink-muted lg:pt-(--rail-offset)" aria-label="Bio">
+    <section className="max-w-column text-body text-ink-muted" aria-label="Bio">
       <HeroReveal id="about" className="grid gap-4">
         <p data-hero-line className="m-0 [--line:0]">
           I&apos;m a software engineer at Microsoft working on the Azure Portal for Azure Kubernetes
@@ -39,11 +39,11 @@ function Bio() {
 
 function ExperienceList() {
   return (
-    <section className="mt-16 max-w-column" aria-label="Experience">
+    <section className="max-w-column" aria-label="Experience">
       <RevealGroup as="ul" className="m-0 grid list-none gap-5 p-0 text-body">
         {EXPERIENCE.map(({ period, organization, role }) => (
-          <li key={`${organization}-${role}`} className="grid grid-cols-[4rem_1fr] gap-4">
-            <span className={period === "Now" ? "text-accent" : "text-ink-muted"}>
+          <li key={`${organization}-${role}`} className="grid grid-cols-[6rem_1fr] gap-4">
+            <span className={`whitespace-nowrap ${period === "Now" ? "text-accent" : "text-ink-muted"}`}>
               {period}
             </span>
             <span>
@@ -96,8 +96,11 @@ function PhotoGallery() {
 export default function About() {
   return (
     <PageContainer>
-      <Bio />
-      <ExperienceList />
+      {/* Bio and experience side by side on wider screens, spanning the same width as the photos */}
+      <div className="grid max-w-content gap-x-12 gap-y-16 pt-12 md:grid-cols-2 lg:pt-(--rail-offset)">
+        <Bio />
+        <ExperienceList />
+      </div>
       <PhotoGallery />
     </PageContainer>
   );

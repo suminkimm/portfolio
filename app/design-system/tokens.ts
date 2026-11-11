@@ -19,8 +19,7 @@ export const COLOR_GROUPS: ColorGroup[] = [
   {
     title: "Surfaces",
     colors: [
-      { name: "cream", className: "bg-cream", usage: "Page background" },
-      { name: "white", className: "bg-white", usage: "Project tags, image mats" },
+      { name: "white", className: "bg-white", usage: "Page background, project tags" },
       { name: "fill", className: "bg-fill", usage: "Placeholders behind loading images" },
     ],
   },

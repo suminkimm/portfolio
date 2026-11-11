@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/content/projects";
+import CardGlowBorder from "./CardGlowBorder";
 import ProjectTag from "./ProjectTag";
 
 type WorkCardProps = {
@@ -18,22 +19,22 @@ export default function WorkCard({ project, isAboveFold = false }: WorkCardProps
       className="group mb-4 flex min-w-0 break-inside-avoid flex-col gap-3 text-inherit no-underline"
       aria-label={`Open case study for ${name}`}
     >
-      <div className="relative w-full overflow-hidden rounded-card bg-fill transition-transform duration-(--duration-base) ease-out-expo group-hover:scale-[0.99] group-focus-visible:scale-[0.99]">
-        <Image
-          src={cover}
-          alt={name}
-          loading={isAboveFold ? "eager" : "lazy"}
-          className="block h-auto w-full"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+      <div className="relative w-full transition-transform duration-(--duration-base) ease-out-expo group-hover:scale-[1.02] group-focus-visible:scale-[1.02]">
+        <CardGlowBorder />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-card border border-line"
-        />
+        {/* Inset 1px and opaque, so the border layer behind it only shows as a 1px edge */}
+        <div className="relative m-px overflow-hidden rounded-[calc(var(--radius-card)-1px)] bg-white">
+          <Image
+            src={cover}
+            alt={name}
+            loading={isAboveFold ? "eager" : "lazy"}
+            className="block h-auto w-full bg-fill"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
 
-        <div className="absolute bottom-3 left-3">
-          <ProjectTag organization={organization} year={year} />
+          <div className="absolute bottom-3 left-3">
+            <ProjectTag organization={organization} year={year} />
+          </div>
         </div>
       </div>
 
